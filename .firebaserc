@@ -3,9 +3,9 @@
     "default": "onepercman-ui"
   },
   "targets": {
-    "echomind-e3af0": {
+    "onepercman-ui": {
       "hosting": {
-        "production": [
+        "onepercman-ui-lib": [
           "onepercman-ui-lib"
         ]
       }
