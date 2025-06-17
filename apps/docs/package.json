@@ -11,13 +11,12 @@
     "lint": "eslint ./stories/*.stories.tsx --max-warnings 0"
   },
   "dependencies": {
-    "ui": "workspace:*",
+    "@ark-ui/react": "^5.14.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "ui": "workspace:*"
   },
   "devDependencies": {
-    "eslint-config": "workspace:*",
-    "typescript-config": "workspace:*",
     "@storybook/addon-actions": "^8.2.6",
     "@storybook/addon-essentials": "^8.2.6",
     "@storybook/addon-links": "^8.2.6",
@@ -26,9 +25,11 @@
     "@typescript-eslint/parser": "^8.34.1",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^9.29.0",
+    "eslint-config": "workspace:*",
     "serve": "^14.2.1",
     "storybook": "^8.2.6",
     "typescript": "5.5.4",
+    "typescript-config": "workspace:*",
     "vite": "^5.1.4"
   }
 }
