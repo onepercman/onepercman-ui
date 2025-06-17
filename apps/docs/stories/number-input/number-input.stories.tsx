@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { NumberInput } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { NumberInput } from "ui";
 
 const meta = {
   title: "Components/NumberInput",

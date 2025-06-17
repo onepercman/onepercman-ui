@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Menu } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Menu } from "ui";
 
 const meta = {
   title: "Components/Menu",

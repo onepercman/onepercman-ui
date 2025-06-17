@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Dialog } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Dialog } from "ui";
 
 const meta = {
   title: "Components/Dialog",

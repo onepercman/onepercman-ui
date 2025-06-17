@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Toggle } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Toggle } from "ui";
 
 const meta = {
   title: "Components/Toggle",

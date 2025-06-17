@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Collapsible } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Collapsible } from "ui";
 
 const meta = {
   title: "Components/Collapsible",

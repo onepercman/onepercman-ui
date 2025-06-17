@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Check } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Check } from "ui";
 
 const meta = {
   title: "Components/Check",

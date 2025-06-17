@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { DatePicker } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { DatePicker } from "ui";
 import { DatePickerContext } from "@ark-ui/react";
 
 const meta = {

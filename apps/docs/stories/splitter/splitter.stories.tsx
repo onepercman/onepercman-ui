@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Splitter } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Splitter } from "ui";
 
 const meta = {
   title: "Components/Splitter",

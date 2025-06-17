@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { TreeView } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { TreeView } from "ui";
 
 const meta = {
   title: "Components/TreeView",

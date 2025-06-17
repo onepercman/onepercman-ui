@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Fieldset } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Fieldset } from "ui";
 
 const meta = {
   title: "Components/Fieldset",

@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { FileUpload } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { FileUpload } from "ui";
 
 const meta = {
   title: "Components/FileUpload",

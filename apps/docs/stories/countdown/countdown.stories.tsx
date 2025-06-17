@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Countdown } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Countdown } from "ui";
 
 const meta: Meta<typeof Countdown> = {
   title: "Components/Countdown",

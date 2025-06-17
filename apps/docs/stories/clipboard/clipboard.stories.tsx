@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Clipboard } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Clipboard } from "ui";
 
 const meta = {
   title: "Components/Clipboard",

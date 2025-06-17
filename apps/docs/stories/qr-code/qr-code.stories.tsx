@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { QrCode } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { QrCode } from "ui";
 
 const meta = {
   title: "Components/QRCode",

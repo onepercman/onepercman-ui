@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Editable } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Editable } from "ui";
 
 const meta: Meta<typeof Editable> = {
   title: "Components/Editable",

@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { SegmentGroup } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { SegmentGroup } from "ui";
 
 const meta = {
   title: "Components/SegmentGroup",

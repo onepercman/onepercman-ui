@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Kbd } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Kbd } from "ui";
 
 const meta = {
   title: "Components/Kbd",

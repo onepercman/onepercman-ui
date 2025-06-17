@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Loader } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Loader } from "ui";
 
 const meta = {
   title: "Components/Loader",

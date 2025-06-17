@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { HoverCard } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { HoverCard } from "ui";
 
 const meta = {
   title: "Components/HoverCard",

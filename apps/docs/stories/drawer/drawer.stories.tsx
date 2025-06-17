@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Component as Drawer } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Component as Drawer } from "ui";
 
 const meta = {
   title: "Components/Drawer",

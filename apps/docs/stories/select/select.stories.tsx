@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Select } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Select } from "ui";
 import { CollectionItem } from "@ark-ui/react";
 
 const meta = {

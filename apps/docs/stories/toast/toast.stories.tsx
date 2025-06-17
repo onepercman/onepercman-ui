@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Toaster } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Toaster } from "ui";
 import { createToaster } from "@ark-ui/react";
 
 const toaster = createToaster({

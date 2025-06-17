@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Carousel } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Carousel } from "ui";
 
 const meta = {
   title: "Components/Carousel",

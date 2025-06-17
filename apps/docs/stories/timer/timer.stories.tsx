@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Timer } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Timer } from "ui";
 
 const meta = {
   title: "Components/Timer",

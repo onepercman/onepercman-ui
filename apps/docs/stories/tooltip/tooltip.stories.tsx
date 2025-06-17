@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Tooltip } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { Tooltip } from "ui";
 
 const meta = {
   title: "Components/Tooltip",

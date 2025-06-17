@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { RatingGroup } from "@onepercman/ui";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { RatingGroup } from "ui";
 
 const meta = {
   title: "Components/RatingGroup",
