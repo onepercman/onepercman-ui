@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "onepercman-ui-lib",
-      "public": "dist",
+      "public": "apps/docs/storybook-static",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
