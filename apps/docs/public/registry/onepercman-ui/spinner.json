@@ -1,0 +1,18 @@
+{
+  "name": "spinner.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/spinner.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "spinner.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { FC, SVGAttributes } from \"react\"\n\nexport const Spinner: FC<SVGAttributes<SVGElement>> = function ({ ...props }) {\n  return (\n    <svg\n      width=\"1em\"\n      height=\"1em\"\n      stroke=\"currentColor\"\n      viewBox=\"0 0 24 24\"\n      strokeWidth=\"4\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      {...props}\n    >\n      <g>\n        <circle cx=\"12\" cy=\"12\" r=\"9.5\" fill=\"none\" strokeLinecap=\"round\">\n          <animate\n            attributeName=\"stroke-dasharray\"\n            dur=\"1.5s\"\n            calcMode=\"spline\"\n            values=\"0 150;42 150;42 150;42 150\"\n            keyTimes=\"0;0.475;0.95;1\"\n            keySplines=\"0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1\"\n            repeatCount=\"indefinite\"\n          />\n          <animate\n            attributeName=\"stroke-dashoffset\"\n            dur=\"1.5s\"\n            calcMode=\"spline\"\n            values=\"0;-16;-59;-59\"\n            keyTimes=\"0;0.475;0.95;1\"\n            keySplines=\"0.42,0,0.58,1;0.42,0,0.58,1;0.42,0,0.58,1\"\n            repeatCount=\"indefinite\"\n          />\n        </circle>\n        <animateTransform\n          attributeName=\"transform\"\n          type=\"rotate\"\n          dur=\"2s\"\n          values=\"0 12 12;360 12 12\"\n          repeatCount=\"indefinite\"\n        />\n      </g>\n    </svg>\n  )\n}\n\nSpinner.displayName = \"Spinner\"\n"
+    }
+  ]
+}

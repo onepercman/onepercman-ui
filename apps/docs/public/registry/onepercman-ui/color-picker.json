@@ -1,0 +1,18 @@
+{
+  "name": "color-picker.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/color-picker.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "color-picker.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { ColorPicker as BaseColorPicker } from \"@ark-ui/react\"\nimport { createComponentFactory, createComponentTree } from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const colorPicker = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(colorPicker)\n\nconst Root = withRoot(BaseColorPicker.Root)\nconst RootProvider = withRoot(BaseColorPicker.RootProvider)\nconst Area = withSlot(BaseColorPicker.Area)\nconst AreaBackground = withSlot(BaseColorPicker.AreaBackground)\nconst AreaThumb = withSlot(BaseColorPicker.AreaThumb)\nconst ChannelInput = withSlot(BaseColorPicker.ChannelInput)\nconst ChannelSlider = withSlot(BaseColorPicker.ChannelSlider)\nconst ChannelSliderLabel = withSlot(BaseColorPicker.ChannelSliderLabel)\nconst ChannelSliderThumb = withSlot(BaseColorPicker.ChannelSliderThumb)\nconst ChannelSliderTrack = withSlot(BaseColorPicker.ChannelSliderTrack)\nconst ChannelSliderValueText = withSlot(BaseColorPicker.ChannelSliderValueText)\nconst Content = withSlot(BaseColorPicker.Content)\nconst Context = withSlot(BaseColorPicker.Context)\nconst Control = withSlot(BaseColorPicker.Control)\nconst EyeDropperTrigger = withSlot(BaseColorPicker.EyeDropperTrigger)\nconst FormatSelect = withSlot(BaseColorPicker.FormatSelect)\nconst FormatTrigger = withSlot(BaseColorPicker.FormatTrigger)\nconst HiddenInput = withSlot(BaseColorPicker.HiddenInput)\nconst Label = withSlot(BaseColorPicker.Label)\nconst Positioner = withSlot(BaseColorPicker.Positioner)\nconst Swatch = withSlot(BaseColorPicker.Swatch)\nconst SwatchGroup = withSlot(BaseColorPicker.SwatchGroup)\nconst SwatchIndicator = withSlot(BaseColorPicker.SwatchIndicator)\nconst SwatchTrigger = withSlot(BaseColorPicker.SwatchTrigger)\nconst TransparencyGrid = withSlot(BaseColorPicker.TransparencyGrid)\nconst Trigger = withSlot(BaseColorPicker.Trigger)\nconst ValueSwatch = withSlot(BaseColorPicker.ValueSwatch)\nconst ValueText = withSlot(BaseColorPicker.ValueText)\nconst View = withSlot(BaseColorPicker.View)\n\nexport const ColorPicker = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Area,\n  AreaBackground,\n  AreaThumb,\n  ChannelInput,\n  ChannelSlider,\n  ChannelSliderLabel,\n  ChannelSliderThumb,\n  ChannelSliderTrack,\n  ChannelSliderValueText,\n  Content,\n  Context,\n  Control,\n  EyeDropperTrigger,\n  FormatSelect,\n  FormatTrigger,\n  HiddenInput,\n  Label,\n  Positioner,\n  Swatch,\n  SwatchGroup,\n  SwatchIndicator,\n  SwatchTrigger,\n  TransparencyGrid,\n  Trigger,\n  ValueSwatch,\n  ValueText,\n  View,\n})\n\nColorPicker.displayName = \"ColorPicker\"\n"
+    }
+  ]
+}

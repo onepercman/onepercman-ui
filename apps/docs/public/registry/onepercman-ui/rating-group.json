@@ -1,0 +1,18 @@
+{
+  "name": "rating-group.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/rating-group.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "rating-group.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { RatingGroup as BaseRatingGroup } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const ratingGroup = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(ratingGroup)\n\nconst Root = withRoot(BaseRatingGroup.Root)\nconst RootProvider = withRoot(BaseRatingGroup.RootProvider)\nconst Context = withSlot(BaseRatingGroup.Context)\nconst Control = withSlot(BaseRatingGroup.Control)\nconst HiddenInput = withSlot(BaseRatingGroup.HiddenInput)\nconst Item = withSlot(BaseRatingGroup.Item)\nconst ItemContext = withSlot(BaseRatingGroup.ItemContext)\nconst Label = withSlot(BaseRatingGroup.Label)\n\nexport interface RatingGroupProps extends ComposedTVProps<typeof ratingGroup> {}\n\nexport interface RatingGroup extends ComponentMetadata {\n  (props: RatingGroupProps): React.ReactElement | null\n}\n\nexport const RatingGroup = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  Control,\n  HiddenInput,\n  Item,\n  ItemContext,\n  Label,\n})\n\nRatingGroup.displayName = \"RatingGroup\"\n"
+    }
+  ]
+}

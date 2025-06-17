@@ -6,7 +6,7 @@
   "scripts": {
     "migrate-stories": "ts-node src/migrate.ts",
     "build-registry": "tsx src/build-registry.ts",
-    "publish-registry": "tsx src/publish-registry.ts"
+    "generate-component-registry": "tsx src/generate-component-registry.ts"
   },
   "dependencies": {
     "find-up": "6.3.0",

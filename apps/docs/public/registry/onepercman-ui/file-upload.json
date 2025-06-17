@@ -1,0 +1,18 @@
+{
+  "name": "file-upload.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/file-upload.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "file-upload.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { FileUpload as BaseFileUpload } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const fileUpload = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(fileUpload)\n\nconst Root = withRoot(BaseFileUpload.Root)\nconst RootProvider = withRoot(BaseFileUpload.RootProvider)\nconst Context = withSlot(BaseFileUpload.Context)\nconst Dropzone = withSlot(BaseFileUpload.Dropzone)\nconst HiddenInput = withSlot(BaseFileUpload.HiddenInput)\nconst Item = withSlot(BaseFileUpload.Item)\nconst ItemDeleteTrigger = withSlot(BaseFileUpload.ItemDeleteTrigger)\nconst ItemGroup = withSlot(BaseFileUpload.ItemGroup)\nconst ItemName = withSlot(BaseFileUpload.ItemName)\nconst ItemPreview = withSlot(BaseFileUpload.ItemPreview)\nconst ItemPreviewImage = withSlot(BaseFileUpload.ItemPreviewImage)\nconst ItemSizeText = withSlot(BaseFileUpload.ItemSizeText)\nconst Label = withSlot(BaseFileUpload.Label)\nconst Trigger = withSlot(BaseFileUpload.Trigger)\n\nexport interface FileUploadProps extends ComposedTVProps<typeof fileUpload> {}\n\nexport interface FileUpload extends ComponentMetadata {\n  (props: FileUploadProps): React.ReactElement | null\n}\n\nexport const FileUpload = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  Dropzone,\n  HiddenInput,\n  Item,\n  ItemDeleteTrigger,\n  ItemGroup,\n  ItemName,\n  ItemPreview,\n  ItemPreviewImage,\n  ItemSizeText,\n  Label,\n  Trigger,\n})\n\nFileUpload.displayName = \"FileUpload\"\n"
+    }
+  ]
+}

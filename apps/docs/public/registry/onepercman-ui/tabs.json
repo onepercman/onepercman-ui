@@ -1,0 +1,18 @@
+{
+  "name": "tabs.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/tabs.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "tabs.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { Tabs as BaseTabs } from \"@ark-ui/react\"\nimport React from \"react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const tabs = tv({\n  base: \"\",\n  slots: {\n    list: \"relative inline-flex items-center gap-2\",\n    trigger:\n      \"relative select-none text-secondary transition-colors data-[selected]:text-primary data-[selected]:[text-shadow:_0px_0px_10px_rgba(var(--tw-schemes-primary),0.50)] hover:text-foreground\",\n    indicator: \"\",\n    content: \"\",\n  },\n  variants: {\n    size: {\n      sm: {\n        trigger: \"px-2 py-1 text-sm\",\n      },\n      md: {\n        trigger: \"px-4 py-2 text-base\",\n      },\n      lg: {\n        trigger: \"px-3 py-2 text-base\",\n      },\n    },\n    variant: {\n      solid: {\n        list: \"rounded bg-line p-1\",\n        indicator:\n          \"absolute bottom-1 left-[var(--left)] h-[var(--height)] w-[var(--width)] rounded bg-default\",\n      },\n      underlined: {\n        list: \"\",\n        indicator:\n          \"absolute bottom-0 left-[var(--left)] h-1 w-[var(--width)] rounded bg-foreground\",\n      },\n      bordered: {\n        list: \"rounded border border-line p-1\",\n        indicator:\n          \"absolute bottom-1 left-[var(--left)] h-[var(--height)] w-[var(--width)] rounded bg-default\",\n      },\n      light: {\n        list: \"\",\n        indicator:\n          \"absolute bottom-0 left-[var(--left)] h-[var(--height)] w-[var(--width)] rounded bg-default\",\n      },\n    },\n  },\n  defaultVariants: {\n    variant: \"solid\",\n    size: \"md\",\n  },\n})\n\nconst { withRoot, withSlot } = createComponentFactory(tabs)\n\nconst Root = withRoot(BaseTabs.Root, \"base\")\nconst Content = withSlot(BaseTabs.Content, \"content\")\nconst Context = withSlot(BaseTabs.Context)\nconst Indicator = withSlot(BaseTabs.Indicator, \"indicator\")\nconst List = withSlot(BaseTabs.List, \"list\")\nconst RootProvider = withSlot(BaseTabs.RootProvider)\nconst Trigger = withSlot(BaseTabs.Trigger, \"trigger\")\n\nconst CustomList = React.forwardRef<\n  React.ElementRef<typeof List>,\n  React.ComponentPropsWithoutRef<typeof List>\n>(function ({ children, ...props }, ref) {\n  return (\n    <List ref={ref} {...props}>\n      <Indicator />\n      {children}\n    </List>\n  )\n})\n\nCustomList.displayName = \"List\"\n\nexport interface TabsProps extends ComposedTVProps<typeof tabs> {}\n\nexport interface Tabs extends ComponentMetadata {\n  (props: TabsProps): React.ReactElement | null\n}\n\nexport const Tabs = createComponentTree(Root, {\n  Root,\n  Content,\n  Context,\n  Indicator,\n  List: CustomList,\n  RootProvider,\n  Trigger,\n})\n\nTabs.displayName = \"Tabs\"\n"
+    }
+  ]
+}

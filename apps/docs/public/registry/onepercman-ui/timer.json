@@ -1,0 +1,18 @@
+{
+  "name": "timer.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/timer.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "timer.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { Timer as BaseTimer } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const timer = tv({\n  base: \"\",\n  slots: {},\n})\n\nconst { withRoot, withSlot } = createComponentFactory(timer)\n\nconst Root = withRoot(BaseTimer.Root, \"base\")\nconst ActionTrigger = withSlot(BaseTimer.ActionTrigger)\nconst Area = withSlot(BaseTimer.Area)\nconst Context = withSlot(BaseTimer.Context)\nconst Control = withSlot(BaseTimer.Control)\nconst Item = withSlot(BaseTimer.Item)\nconst RootProvider = withSlot(BaseTimer.RootProvider)\nconst Separator = withSlot(BaseTimer.Separator)\n\nexport interface TimerProps extends ComposedTVProps<typeof timer> {}\n\nexport interface Timer extends ComponentMetadata {\n  (props: TimerProps): React.ReactElement | null\n}\n\nexport const Timer = createComponentTree(Root, {\n  Root,\n  ActionTrigger,\n  Area,\n  Context,\n  Control,\n  Item,\n  RootProvider,\n  Separator,\n})\n\nTimer.displayName = \"Timer\"\n"
+    }
+  ]
+}

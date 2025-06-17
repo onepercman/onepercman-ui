@@ -1,0 +1,18 @@
+{
+  "name": "slider.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/slider.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "slider.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { Slider as BaseSlider } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const slider = tv({\n  base: \"flex flex-col gap-1\",\n  slots: {\n    label: \"inline-flex justify-between gap-2 text-xs text-secondary\",\n    valueText: \"\",\n    control: \"inline-flex cursor-pointer items-center gap-2\",\n    track: \"relative grow overflow-hidden rounded bg-default\",\n    range: \"absolute h-full bg-primary\",\n    thumb: \"-top-1/2 rounded-full bg-foreground\",\n    marker: \"\",\n  },\n  variants: {\n    size: {\n      sm: {\n        valueText: \"text-sm\",\n        track: \"h-1\",\n        thumb: \"h-2 w-2\",\n      },\n      md: {\n        valueText: \"text-base\",\n        track: \"h-2\",\n        thumb: \"h-4 w-4\",\n      },\n      lg: {\n        valueText: \"text-base\",\n        track: \"h-3\",\n        thumb: \"h-6 w-6\",\n      },\n    },\n  },\n  defaultVariants: {\n    variant: \"solid\",\n    size: \"md\",\n  },\n})\n\nconst { withRoot, withSlot } = createComponentFactory(slider)\n\nconst Root = withRoot(BaseSlider.Root)\nconst RootProvider = withRoot(BaseSlider.RootProvider)\nconst Context = withSlot(BaseSlider.Context)\nconst Control = withSlot(BaseSlider.Control)\nconst HiddenInput = withSlot(BaseSlider.HiddenInput)\nconst Label = withSlot(BaseSlider.Label)\nconst Marker = withSlot(BaseSlider.Marker)\nconst MarkerGroup = withSlot(BaseSlider.MarkerGroup)\nconst Range = withSlot(BaseSlider.Range)\nconst Thumb = withSlot(BaseSlider.Thumb)\nconst Track = withSlot(BaseSlider.Track)\nconst ValueText = withSlot(BaseSlider.ValueText)\n\nexport interface SliderProps extends ComposedTVProps<typeof slider> {}\n\nexport interface Slider extends ComponentMetadata {\n  (props: SliderProps): React.ReactElement | null\n}\n\nexport const Slider = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  Control,\n  HiddenInput,\n  Label,\n  Marker,\n  MarkerGroup,\n  Range,\n  Thumb,\n  Track,\n  ValueText,\n})\n\nSlider.displayName = \"Slider\"\n"
+    }
+  ]
+}

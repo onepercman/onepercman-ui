@@ -1,0 +1,18 @@
+{
+  "name": "splitter.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/splitter.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "splitter.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { Splitter as BaseSplitter } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const splitter = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(splitter)\n\nconst Root = withRoot(BaseSplitter.Root)\nconst RootProvider = withRoot(BaseSplitter.RootProvider)\nconst Context = withSlot(BaseSplitter.Context)\nconst Panel = withSlot(BaseSplitter.Panel)\nconst ResizeTrigger = withSlot(BaseSplitter.ResizeTrigger)\n\nexport interface SplitterProps extends ComposedTVProps<typeof splitter> {}\n\nexport interface Splitter extends ComponentMetadata {\n  (props: SplitterProps): React.ReactElement | null\n}\n\nexport const Splitter = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  Panel,\n  ResizeTrigger,\n})\n\nSplitter.displayName = \"Splitter\"\n"
+    }
+  ]
+}

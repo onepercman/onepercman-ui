@@ -4,6 +4,7 @@
   "scripts": {
     "build": "turbo run build",
     "build-registry": "turbo run build-registry",
+    "generate-component-registry": "turbo run generate-component-registry",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",

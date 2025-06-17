@@ -1,0 +1,18 @@
+{
+  "name": "toast.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/toast.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "toast.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport {\n  Toast as BaseToast,\n  Toaster as BaseToaster,\n  createToaster,\n} from \"@ark-ui/react\"\nimport { FC } from \"react\"\nimport { LuCheck, LuCircleX, LuInfo, LuX } from \"react-icons/lu\"\nimport { tv } from \"tailwind-variants\"\nimport { Button } from \"./button\"\nimport { Spinner } from \"./spinner\"\n\nexport const toast = tv({\n  base: [\n    \"relative min-w-64 rounded border border-line bg-component p-4 shadow-lg transition-all duration-300\",\n    \"z-[var(--z-index)]\",\n    \"opacity-[var(--opacity)]\",\n    \"translate-x-[var(--x)]\",\n    \"translate-y-[var(--y)]\",\n    \"h-[var(--height)]\",\n    \"[scale:var(--scale)]\",\n  ],\n  slots: {\n    container: \"gap-8\",\n    title: \"mt-0 inline-flex items-center gap-2 pr-6 text-sm\",\n    description: \"text-xs text-secondary\",\n    dismiss: \"absolute right-2 top-2\",\n  },\n})\n\nfunction getIcon(type?: \"success\" | \"error\" | \"loading\" | \"info\" | any) {\n  switch (type) {\n    case \"loading\":\n      return <Spinner />\n    case \"success\":\n      return <LuCheck className=\"text-success\" />\n    case \"error\":\n      return <LuCircleX className=\"text-error\" />\n    case \"info\":\n      return <LuInfo className=\"text-info\" />\n    default:\n      return null\n  }\n}\n\nexport interface ToasterProps {\n  toaster: ReturnType<typeof createToaster>\n}\n\nexport const Toaster: FC<ToasterProps> = ({ toaster }) => {\n  const styles = toast()\n\n  return (\n    <BaseToaster toaster={toaster} className={styles.container()}>\n      {({ id, title, description, type }) => {\n        return (\n          <BaseToast.Root key={id} className={styles.base()}>\n            <BaseToast.Title className={styles.title()}>\n              {getIcon(type)}\n              {title}\n            </BaseToast.Title>\n            <BaseToast.Description className={styles.description()}>\n              {description}\n            </BaseToast.Description>\n            <BaseToast.CloseTrigger asChild>\n              <Button\n                size=\"xs\"\n                shape=\"circle\"\n                className={styles.dismiss()}\n                leftIcon={<LuX />}\n              />\n            </BaseToast.CloseTrigger>\n          </BaseToast.Root>\n        )\n      }}\n    </BaseToaster>\n  )\n}\n\nToaster.displayName = \"Toaster\"\n"
+    }
+  ]
+}

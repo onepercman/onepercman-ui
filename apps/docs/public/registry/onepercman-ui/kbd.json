@@ -1,0 +1,18 @@
+{
+  "name": "kbd.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/kbd.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "kbd.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { styled } from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const kbd = tv({\n  base: [\n    \"inline-flex items-center gap-1 rounded border border-line bg-component text-center font-medium shadow-[0_1px_0_white]\",\n    \"min-h-[var(--badge-size)] min-w-[var(--badge-size)]\",\n  ],\n  variants: {\n    size: {\n      xs: \"px-2 py-1 text-xs [--badge-size:1.5rem]\",\n      sm: \"px-3 py-2 text-sm [--badge-size:2rem]\",\n      md: \"px-4 py-2 text-sm [--badge-size:2.5rem]\",\n      lg: \"px-4 py-2 [--badge-size:2.75rem]\",\n    },\n  },\n  defaultVariants: {\n    size: \"sm\",\n    color: \"default\",\n  },\n})\n\nexport const Kbd = styled(\"span\", kbd)\n\nKbd.displayName = \"Kbd\"\n\nexport default Kbd\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "collapsible.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/collapsible.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "collapsible.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { Collapsible as BaseCollapsible } from \"@ark-ui/react\"\nimport { createComponentFactory, createComponentTree } from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const collapsible = tv({\n  base: \"flex flex-col\",\n  slots: {\n    trigger: \"inline-flex w-full items-center justify-between gap-2 rounded\",\n    content: [\n      \"overflow-hidden !duration-150\",\n      \"data-[state=open]:animate-collapse\",\n      \"data-[state=closed]:animate-collapse data-[state=closed]:direction-reverse\",\n    ],\n  },\n})\n\nconst { withRoot, withSlot } = createComponentFactory(collapsible)\n\nconst Root = withRoot(BaseCollapsible.Root, \"base\")\nconst Content = withSlot(BaseCollapsible.Content, \"content\")\nconst Context = withSlot(BaseCollapsible.Context)\nconst RootProvider = withSlot(BaseCollapsible.RootProvider)\nconst Trigger = withSlot(BaseCollapsible.Trigger, \"trigger\")\n\nexport const Collapsible = createComponentTree(Root, {\n  Root,\n  Content,\n  Context,\n  RootProvider,\n  Trigger,\n})\n\nCollapsible.displayName = \"Collapsible\"\n"
+    }
+  ]
+}

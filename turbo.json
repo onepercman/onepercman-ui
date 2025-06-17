@@ -9,6 +9,9 @@
     "build-registry": {
       "cache": false
     },
+    "generate-component-registry": {
+      "cache": false
+    },
     "lint": {
       "dependsOn": ["^lint"]
     },

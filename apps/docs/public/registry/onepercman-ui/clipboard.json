@@ -1,0 +1,18 @@
+{
+  "name": "clipboard.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/clipboard.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "clipboard.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { Clipboard as BaseClipboard } from \"@ark-ui/react\"\nimport { createComponentFactory, createComponentTree } from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const clipboard = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(clipboard)\n\nconst Root = withRoot(BaseClipboard.Root)\nconst RootProvider = withRoot(BaseClipboard.RootProvider)\nconst Context = withSlot(BaseClipboard.Context)\nconst Control = withSlot(BaseClipboard.Control)\nconst Indicator = withSlot(BaseClipboard.Indicator)\nconst Input = withSlot(BaseClipboard.Input)\nconst Label = withSlot(BaseClipboard.Label)\nconst Trigger = withSlot(BaseClipboard.Trigger)\n\nexport const Clipboard = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  Control,\n  Indicator,\n  Input,\n  Label,\n  Trigger,\n})\n\nClipboard.displayName = \"Clipboard\"\n"
+    }
+  ]
+}

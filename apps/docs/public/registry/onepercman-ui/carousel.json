@@ -1,0 +1,18 @@
+{
+  "name": "carousel.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/carousel.tsx",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": [
+      "ui"
+    ]
+  },
+  "files": [
+    {
+      "name": "carousel.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\";\n\nimport { Carousel as BaseCarousel } from \"@ark-ui/react\";\nimport { createComponentFactory, createComponentTree } from \"react-tvcx\";\nimport { tv } from \"tailwind-variants\";\n\nexport const carousel = tv({\n  base: \"\",\n});\n\nconst { withRoot, withSlot } = createComponentFactory(carousel);\n\nconst Root = withRoot(BaseCarousel.Root);\nconst RootProvider = withRoot(BaseCarousel.RootProvider);\nconst Context = withSlot(BaseCarousel.Context);\nconst Control = withSlot(BaseCarousel.Control);\nconst Indicator = withSlot(BaseCarousel.Indicator);\nconst IndicatorGroup = withSlot(BaseCarousel.IndicatorGroup);\nconst Item = withSlot(BaseCarousel.Item);\nconst ItemGroup = withSlot(BaseCarousel.ItemGroup);\nconst NextTrigger = withSlot(BaseCarousel.NextTrigger);\nconst PrevTrigger = withSlot(BaseCarousel.PrevTrigger);\n\nexport const Carousel = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  Control,\n  Indicator,\n  IndicatorGroup,\n  Item,\n  ItemGroup,\n  NextTrigger,\n  PrevTrigger,\n});\n\nCarousel.displayName = \"Carousel\";\n"
+    }
+  ]
+}
