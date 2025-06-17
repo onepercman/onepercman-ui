@@ -40,6 +40,11 @@ jobs:
       - name: Create Service Account Key File
         run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > firebase-service-account.json
 
+      - name: Configure Firebase Target
+        run: firebase target:apply hosting onepercman-ui-lib onepercman-ui
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: firebase-service-account.json
+
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
