@@ -7,7 +7,10 @@ import colors from "tailwindcss/colors";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
-  content: ["./stories/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./stories/**/*.{js,jsx,ts,tsx}",
+    "../../packages/ui/src/**/*.{js,jsx,ts,tsx}",
+  ],
   darkMode: ["class", '[data-theme="dark"]'],
   theme: {
     extend: {

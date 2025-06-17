@@ -10,7 +10,7 @@ const config = {
 
   addons: [
     getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-docs")
+    getAbsolutePath("@storybook/addon-docs"),
   ],
 
   framework: {
@@ -32,6 +32,11 @@ const config = {
         ],
         extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
       },
+      css: {
+        postcss: {
+          plugins: [require("tailwindcss"), require("autoprefixer")],
+        },
+      },
       optimizeDeps: {
         include: ["react", "react-dom"],
         esbuildOptions: {
@@ -42,7 +47,7 @@ const config = {
         target: "esnext",
       },
     });
-  }
+  },
 };
 
 export default config;
