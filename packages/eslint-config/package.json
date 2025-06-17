@@ -2,10 +2,11 @@
   "name": "@repo/eslint-config",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "files": [
-    "library.js",
-    "react.js",
-    "storybook.js"
+    "library.mjs",
+    "react.mjs",
+    "storybook.mjs"
   ],
   "devDependencies": {
     "@vercel/style-guide": "^5.2.0",
