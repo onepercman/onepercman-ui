@@ -35,7 +35,7 @@ jobs:
             ${{ runner.os }}-turbo-
 
       - name: Build with Turborepo
-        run: pnpm turbo build --filter=onepercman-ui...
+        run: pnpm build
 
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
