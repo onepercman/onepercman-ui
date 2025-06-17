@@ -1,4 +1,4 @@
-import storybookConfig from "@repo/eslint-config/storybook.mjs";
+import storybookConfig from "eslint-config/storybook.mjs";
 import tsParser from "@typescript-eslint/parser";
 
 export default [

@@ -1,3 +1,3 @@
-import reactConfig from "@repo/eslint-config/react.mjs";
+import reactConfig from "eslint-config/react.mjs";
 
 export default [...reactConfig];

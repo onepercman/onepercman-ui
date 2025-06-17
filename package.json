@@ -1,7 +1,9 @@
 {
-  "private": true,
+  "name": "onepercman-ui",
+  "packageManager": "pnpm@10.12.1",
   "scripts": {
     "build": "turbo run build",
+    "build-registry": "turbo run build-registry",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules",
@@ -15,7 +17,5 @@
     "@changesets/cli": "^2.27.1",
     "prettier": "^3.2.5",
     "turbo": "^2.5.4"
-  },
-  "packageManager": "pnpm@8.15.6",
-  "name": "design-system"
+  }
 }
