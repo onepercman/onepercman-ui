@@ -1,0 +1,16 @@
+{
+  "name": "index.tsx",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/index.ts",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "tags": ["ui"]
+  },
+  "files": [
+    {
+      "name": "index.tsx",
+      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\nexport * from \"./accordion\";\nexport * from \"./avatar\";\nexport * from \"./badge\";\nexport * from \"./button\";\nexport * from \"./carousel\";\nexport * from \"./check\";\nexport * from \"./checkbox\";\nexport * from \"./clipboard\";\nexport * from \"./collapsible\";\nexport * from \"./color-picker\";\nexport * from \"./combobox\";\nexport * from \"./countdown\";\nexport * from \"./date-picker\";\nexport * from \"./dialog\";\nexport * from \"./drawer\";\nexport * from \"./editable\";\nexport * from \"./empty\";\nexport * from \"./field\";\nexport * from \"./fieldset\";\nexport * from \"./file-upload\";\nexport * from \"./hover-card\";\nexport * from \"./input\";\nexport * from \"./kbd\";\nexport * from \"./loader\";\nexport * from \"./menu\";\nexport * from \"./number-input\";\nexport * from \"./pagination\";\nexport * from \"./pin-input\";\nexport * from \"./popover\";\nexport * from \"./progress\";\nexport * from \"./qr-code\";\nexport * from \"./radio-group\";\nexport * from \"./rating-group\";\nexport * from \"./segment-group\";\nexport * from \"./select\";\nexport * from \"./signature-pad\";\nexport * from \"./slider\";\nexport * from \"./spinner\";\nexport * from \"./splitter\";\nexport * from \"./steps\";\nexport * from \"./switch\";\nexport * from \"./table\";\nexport * from \"./tabs\";\nexport * from \"./tags-input\";\nexport * from \"./textarea\";\nexport * from \"./timer\";\nexport * from \"./toast\";\nexport * from \"./toggle\";\nexport * from \"./toggle-group\";\nexport * from \"./tooltip\";\nexport * from \"./tree-view\";"
+    }
+  ]
+}

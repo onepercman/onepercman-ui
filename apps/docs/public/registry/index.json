@@ -1,0 +1,12 @@
+{
+  "version": "2.1.1",
+  "libraries": [
+    {
+      "name": "onepercman-ui",
+      "source": "https://github.com/onepercman/onepercman-ui",
+      "description": "",
+      "license": "https://github.com/onepercman/onepercman-ui",
+      "tags": ["ui"]
+    }
+  ]
+}
