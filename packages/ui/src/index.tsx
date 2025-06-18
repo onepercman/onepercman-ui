@@ -1,263 +1,51 @@
-/**
- * Component registry index for onepercman-ui
- */
-export const index = {
-  version: "0.0.0",
-  components: [
-  {
-    "name": "accordion",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "avatar",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "badge",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "button",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "carousel",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "check",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "checkbox",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "clipboard",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "collapsible",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "color-picker",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "combobox",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "countdown",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "date-picker",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "dialog",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "drawer",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "editable",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "empty",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "field",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "fieldset",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "file-upload",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "hover-card",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "input",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "kbd",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "loader",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "menu",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "number-input",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "pagination",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "pin-input",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "popover",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "progress",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "qr-code",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "radio-group",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "rating-group",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "segment-group",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "select",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "signature-pad",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "slider",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "spinner",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "splitter",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "steps",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "switch",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "table",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "tabs",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "tags-input",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "textarea",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "timer",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "toast",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "toggle-group",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "toggle",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "tooltip",
-    "description": "",
-    "version": "0.0.0"
-  },
-  {
-    "name": "tree-view",
-    "description": "",
-    "version": "0.0.0"
-  }
-]
-};
+export * from "./accordion";
+export * from "./avatar";
+export * from "./badge";
+export * from "./button";
+export * from "./carousel";
+export * from "./check";
+export * from "./checkbox";
+export * from "./clipboard";
+export * from "./collapsible";
+export * from "./color-picker";
+export * from "./combobox";
+export * from "./countdown";
+export * from "./date-picker";
+export * from "./dialog";
+export * from "./drawer";
+export * from "./editable";
+export * from "./empty";
+export * from "./field";
+export * from "./fieldset";
+export * from "./file-upload";
+export * from "./hover-card";
+export * from "./input";
+export * from "./kbd";
+export * from "./loader";
+export * from "./menu";
+export * from "./number-input";
+export * from "./pagination";
+export * from "./pin-input";
+export * from "./popover";
+export * from "./progress";
+export * from "./qr-code";
+export * from "./radio-group";
+export * from "./rating-group";
+export * from "./segment-group";
+export * from "./select";
+export * from "./signature-pad";
+export * from "./slider";
+export * from "./spinner";
+export * from "./splitter";
+export * from "./steps";
+export * from "./switch";
+export * from "./table";
+export * from "./tabs";
+export * from "./tags-input";
+export * from "./textarea";
+export * from "./timer";
+export * from "./toast";
+export * from "./toggle";
+export * from "./toggle-group";
+export * from "./tooltip";
+export * from "./tree-view";

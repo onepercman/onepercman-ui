@@ -88,24 +88,10 @@ function readComponentInfo(componentPath: string): ComponentRegistry {
 /**
  * Generate component registry
  * This function:
- * 1. Creates index.tsx in components directory
- * 2. Reads all component files
- * 3. Updates index.tsx with component list
- * 4. Generates JSON files for each component
+ * 1. Reads all component files
+ * 2. Generates JSON files for each component
  */
 function generateRegistry() {
-  // Create initial index.tsx file
-  const indexContent = `/**
- * Component registry index for onepercman-ui
- */
-export const index = {
-  version: "${getPackageVersion()}",
-  components: []
-};`;
-
-  const indexPath = path.join(COMPONENTS_DIR, "index.tsx");
-  fs.writeFileSync(indexPath, indexContent);
-
   // Read all component files
   const components = fs
     .readdirSync(COMPONENTS_DIR)
@@ -115,27 +101,6 @@ export const index = {
       return readComponentInfo(componentPath);
     });
 
-  // Update index.tsx with component list
-  const updatedIndexContent = `/**
- * Component registry index for onepercman-ui
- */
-export const index = {
-  version: "${getPackageVersion()}",
-  components: ${JSON.stringify(
-    components
-      .filter((c) => c.name !== "index.tsx")
-      .map((component) => ({
-        name: component.name.replace(".tsx", ""),
-        description: component.meta.description,
-        version: getPackageVersion(),
-      })),
-    null,
-    2
-  )}
-};`;
-
-  fs.writeFileSync(indexPath, updatedIndexContent);
-
   // Generate JSON files for each component
   components.forEach((component) => {
     const componentJson = JSON.stringify(component, null, 2);
@@ -143,7 +108,7 @@ export const index = {
     fs.writeFileSync(path.join(REGISTRY_DIR, fileName), componentJson);
   });
 
-  console.log("Component registry generated successfully!");
+  console.log("Component registry JSON files generated successfully!");
 }
 
 // Run the script
