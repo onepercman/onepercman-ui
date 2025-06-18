@@ -5,8 +5,8 @@
   "targets": {
     "onepercman-ui": {
       "hosting": {
-        "onepercman-ui-lib": [
-          "onepercman-ui-lib"
+        "onepercman-ui": [
+          "onepercman-ui"
         ]
       }
     }
