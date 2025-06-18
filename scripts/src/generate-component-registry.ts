@@ -11,6 +11,10 @@ const REGISTRY_DIR = path.join(
   __dirname,
   "../../apps/docs/public/registry/onepercman-ui"
 );
+const PARENT_REGISTRY_DIR = path.join(
+  __dirname,
+  "../../apps/docs/public/registry"
+);
 
 // Type definitions
 interface ComponentFile {
@@ -30,9 +34,26 @@ interface ComponentRegistry {
   files: ComponentFile[];
 }
 
-// Ensure registry directory exists
+interface RegistryIndex {
+  version: string;
+  meta: {
+    name: string;
+    source: string;
+    description: string;
+    license: string;
+    tags: string[];
+  };
+  resources: {
+    name: string;
+  }[];
+}
+
+// Ensure registry directories exist
 if (!fs.existsSync(REGISTRY_DIR)) {
   fs.mkdirSync(REGISTRY_DIR, { recursive: true });
+}
+if (!fs.existsSync(PARENT_REGISTRY_DIR)) {
+  fs.mkdirSync(PARENT_REGISTRY_DIR, { recursive: true });
 }
 
 /**
@@ -90,6 +111,7 @@ function readComponentInfo(componentPath: string): ComponentRegistry {
  * This function:
  * 1. Reads all component files
  * 2. Generates JSON files for each component
+ * 3. Generates onepercman-ui.json with component list
  */
 function generateRegistry() {
   // Read all component files
@@ -107,6 +129,27 @@ function generateRegistry() {
     const fileName = component.name.replace(".tsx", ".json");
     fs.writeFileSync(path.join(REGISTRY_DIR, fileName), componentJson);
   });
+
+  // Generate onepercman-ui.json with component list
+  const registryIndex: RegistryIndex = {
+    version: getPackageVersion(),
+    meta: {
+      name: "onepercman-ui",
+      source: "https://github.com/onepercman/onepercman-ui",
+      description: "",
+      license: "https://github.com/onepercman/onepercman-ui",
+      tags: ["ui"],
+    },
+    resources: components.map((component) => ({
+      name: component.name.replace(".tsx", ""),
+    })),
+  };
+
+  // Write onepercman-ui.json in the parent registry directory
+  fs.writeFileSync(
+    path.join(PARENT_REGISTRY_DIR, "onepercman-ui.json"),
+    JSON.stringify(registryIndex, null, 2)
+  );
 
   console.log("Component registry JSON files generated successfully!");
 }

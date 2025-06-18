@@ -1,0 +1,170 @@
+{
+  "version": "0.0.0",
+  "meta": {
+    "name": "onepercman-ui",
+    "source": "https://github.com/onepercman/onepercman-ui",
+    "description": "",
+    "license": "https://github.com/onepercman/onepercman-ui",
+    "tags": [
+      "ui"
+    ]
+  },
+  "resources": [
+    {
+      "name": "accordion"
+    },
+    {
+      "name": "avatar"
+    },
+    {
+      "name": "badge"
+    },
+    {
+      "name": "button"
+    },
+    {
+      "name": "carousel"
+    },
+    {
+      "name": "check"
+    },
+    {
+      "name": "checkbox"
+    },
+    {
+      "name": "clipboard"
+    },
+    {
+      "name": "collapsible"
+    },
+    {
+      "name": "color-picker"
+    },
+    {
+      "name": "combobox"
+    },
+    {
+      "name": "countdown"
+    },
+    {
+      "name": "date-picker"
+    },
+    {
+      "name": "dialog"
+    },
+    {
+      "name": "drawer"
+    },
+    {
+      "name": "editable"
+    },
+    {
+      "name": "empty"
+    },
+    {
+      "name": "field"
+    },
+    {
+      "name": "fieldset"
+    },
+    {
+      "name": "file-upload"
+    },
+    {
+      "name": "hover-card"
+    },
+    {
+      "name": "index"
+    },
+    {
+      "name": "input"
+    },
+    {
+      "name": "kbd"
+    },
+    {
+      "name": "loader"
+    },
+    {
+      "name": "menu"
+    },
+    {
+      "name": "number-input"
+    },
+    {
+      "name": "pagination"
+    },
+    {
+      "name": "pin-input"
+    },
+    {
+      "name": "popover"
+    },
+    {
+      "name": "progress"
+    },
+    {
+      "name": "qr-code"
+    },
+    {
+      "name": "radio-group"
+    },
+    {
+      "name": "rating-group"
+    },
+    {
+      "name": "segment-group"
+    },
+    {
+      "name": "select"
+    },
+    {
+      "name": "signature-pad"
+    },
+    {
+      "name": "slider"
+    },
+    {
+      "name": "spinner"
+    },
+    {
+      "name": "splitter"
+    },
+    {
+      "name": "steps"
+    },
+    {
+      "name": "switch"
+    },
+    {
+      "name": "table"
+    },
+    {
+      "name": "tabs"
+    },
+    {
+      "name": "tags-input"
+    },
+    {
+      "name": "textarea"
+    },
+    {
+      "name": "timer"
+    },
+    {
+      "name": "toast"
+    },
+    {
+      "name": "toggle-group"
+    },
+    {
+      "name": "toggle"
+    },
+    {
+      "name": "tooltip"
+    },
+    {
+      "name": "tree-view"
+    }
+  ]
+}
