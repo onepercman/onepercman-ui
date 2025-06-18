@@ -4,7 +4,7 @@
     "name": "onepercman-ui",
     "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/toggle.tsx",
     "description": "",
-    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "license": "https://github.com/onepercman/onepercman-ui",
     "tags": [
       "ui"
     ]
@@ -12,7 +12,7 @@
   "files": [
     {
       "name": "toggle.tsx",
-      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { Toggle as BaseToggle } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const toggle = tv({\n  base: \"\",\n  slots: {},\n})\n\nconst { withRoot, withSlot } = createComponentFactory(toggle)\n\nconst Root = withRoot(BaseToggle.Root, \"base\")\nconst Context = withSlot(BaseToggle.Context)\nconst Indicator = withSlot(BaseToggle.Indicator)\n\nexport interface ToggleProps extends ComposedTVProps<typeof toggle> {}\n\nexport interface Toggle extends ComponentMetadata {\n  (props: ToggleProps): React.ReactElement | null\n}\n\nexport const Toggle = createComponentTree(Root, {\n  Root,\n  Context,\n  Indicator,\n})\n\nToggle.displayName = \"Toggle\"\n"
+      "content": "\"use client\"\n\nimport { Toggle as BaseToggle } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const toggle = tv({\n  base: \"\",\n  slots: {},\n})\n\nconst { withRoot, withSlot } = createComponentFactory(toggle)\n\nconst Root = withRoot(BaseToggle.Root, \"base\")\nconst Context = withSlot(BaseToggle.Context)\nconst Indicator = withSlot(BaseToggle.Indicator)\n\nexport interface ToggleProps extends ComposedTVProps<typeof toggle> {}\n\nexport interface Toggle extends ComponentMetadata {\n  (props: ToggleProps): React.ReactElement | null\n}\n\nexport const Toggle = createComponentTree(Root, {\n  Root,\n  Context,\n  Indicator,\n})\n\nToggle.displayName = \"Toggle\"\n"
     }
   ]
 }

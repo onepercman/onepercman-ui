@@ -4,7 +4,7 @@
     "name": "onepercman-ui",
     "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/tags-input.tsx",
     "description": "",
-    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "license": "https://github.com/onepercman/onepercman-ui",
     "tags": [
       "ui"
     ]
@@ -12,7 +12,7 @@
   "files": [
     {
       "name": "tags-input.tsx",
-      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { TagsInput as BaseTagsInput } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const tagsInput = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(tagsInput)\n\nconst Root = withRoot(BaseTagsInput.Root)\nconst RootProvider = withRoot(BaseTagsInput.RootProvider)\nconst ClearTrigger = withSlot(BaseTagsInput.ClearTrigger)\nconst Context = withSlot(BaseTagsInput.Context)\nconst Control = withSlot(BaseTagsInput.Control)\nconst HiddenInput = withSlot(BaseTagsInput.HiddenInput)\nconst Input = withSlot(BaseTagsInput.Input)\nconst Item = withSlot(BaseTagsInput.Item)\nconst ItemContext = withSlot(BaseTagsInput.ItemContext)\nconst ItemDeleteTrigger = withSlot(BaseTagsInput.ItemDeleteTrigger)\nconst ItemInput = withSlot(BaseTagsInput.ItemInput)\nconst ItemText = withSlot(BaseTagsInput.ItemText)\nconst Label = withSlot(BaseTagsInput.Label)\n\nexport interface TagsInputProps extends ComposedTVProps<typeof tagsInput> {}\n\nexport interface TagsInput extends ComponentMetadata {\n  (props: TagsInputProps): React.ReactElement | null\n}\n\nexport const TagsInput = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  ClearTrigger,\n  Context,\n  Control,\n  HiddenInput,\n  Input,\n  Item,\n  ItemContext,\n  ItemDeleteTrigger,\n  ItemInput,\n  ItemText,\n  Label,\n})\n\nTagsInput.displayName = \"TagsInput\"\n"
+      "content": "\"use client\"\n\nimport { TagsInput as BaseTagsInput } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const tagsInput = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(tagsInput)\n\nconst Root = withRoot(BaseTagsInput.Root)\nconst RootProvider = withRoot(BaseTagsInput.RootProvider)\nconst ClearTrigger = withSlot(BaseTagsInput.ClearTrigger)\nconst Context = withSlot(BaseTagsInput.Context)\nconst Control = withSlot(BaseTagsInput.Control)\nconst HiddenInput = withSlot(BaseTagsInput.HiddenInput)\nconst Input = withSlot(BaseTagsInput.Input)\nconst Item = withSlot(BaseTagsInput.Item)\nconst ItemContext = withSlot(BaseTagsInput.ItemContext)\nconst ItemDeleteTrigger = withSlot(BaseTagsInput.ItemDeleteTrigger)\nconst ItemInput = withSlot(BaseTagsInput.ItemInput)\nconst ItemText = withSlot(BaseTagsInput.ItemText)\nconst Label = withSlot(BaseTagsInput.Label)\n\nexport interface TagsInputProps extends ComposedTVProps<typeof tagsInput> {}\n\nexport interface TagsInput extends ComponentMetadata {\n  (props: TagsInputProps): React.ReactElement | null\n}\n\nexport const TagsInput = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  ClearTrigger,\n  Context,\n  Control,\n  HiddenInput,\n  Input,\n  Item,\n  ItemContext,\n  ItemDeleteTrigger,\n  ItemInput,\n  ItemText,\n  Label,\n})\n\nTagsInput.displayName = \"TagsInput\"\n"
     }
   ]
 }

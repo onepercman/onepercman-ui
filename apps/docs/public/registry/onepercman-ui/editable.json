@@ -4,7 +4,7 @@
     "name": "onepercman-ui",
     "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/editable.tsx",
     "description": "",
-    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "license": "https://github.com/onepercman/onepercman-ui",
     "tags": [
       "ui"
     ]
@@ -12,7 +12,7 @@
   "files": [
     {
       "name": "editable.tsx",
-      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { Editable as BaseEditable } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const editable = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(editable)\n\nconst Root = withRoot(BaseEditable.Root)\nconst RootProvider = withRoot(BaseEditable.RootProvider)\nconst Context = withSlot(BaseEditable.Context)\nconst Area = withSlot(BaseEditable.Area)\nconst CancelTrigger = withSlot(BaseEditable.CancelTrigger)\nconst Control = withSlot(BaseEditable.Control)\nconst EditTrigger = withSlot(BaseEditable.EditTrigger)\nconst Input = withSlot(BaseEditable.Input)\nconst Label = withSlot(BaseEditable.Label)\nconst Preview = withSlot(BaseEditable.Preview)\nconst SubmitTrigger = withSlot(BaseEditable.SubmitTrigger)\n\nexport interface EditableProps extends ComposedTVProps<typeof editable> {}\n\nexport interface Editable extends ComponentMetadata {\n  (props: EditableProps): React.ReactElement | null\n}\n\nexport const Editable = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  Area,\n  CancelTrigger,\n  Control,\n  EditTrigger,\n  Input,\n  Label,\n  Preview,\n  SubmitTrigger,\n})\n\nEditable.displayName = \"Editable\"\n"
+      "content": "\"use client\"\n\nimport { Editable as BaseEditable } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const editable = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(editable)\n\nconst Root = withRoot(BaseEditable.Root)\nconst RootProvider = withRoot(BaseEditable.RootProvider)\nconst Context = withSlot(BaseEditable.Context)\nconst Area = withSlot(BaseEditable.Area)\nconst CancelTrigger = withSlot(BaseEditable.CancelTrigger)\nconst Control = withSlot(BaseEditable.Control)\nconst EditTrigger = withSlot(BaseEditable.EditTrigger)\nconst Input = withSlot(BaseEditable.Input)\nconst Label = withSlot(BaseEditable.Label)\nconst Preview = withSlot(BaseEditable.Preview)\nconst SubmitTrigger = withSlot(BaseEditable.SubmitTrigger)\n\nexport interface EditableProps extends ComposedTVProps<typeof editable> {}\n\nexport interface Editable extends ComponentMetadata {\n  (props: EditableProps): React.ReactElement | null\n}\n\nexport const Editable = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  Area,\n  CancelTrigger,\n  Control,\n  EditTrigger,\n  Input,\n  Label,\n  Preview,\n  SubmitTrigger,\n})\n\nEditable.displayName = \"Editable\"\n"
     }
   ]
 }

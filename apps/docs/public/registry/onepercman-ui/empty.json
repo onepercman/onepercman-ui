@@ -4,7 +4,7 @@
     "name": "onepercman-ui",
     "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/empty.tsx",
     "description": "",
-    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "license": "https://github.com/onepercman/onepercman-ui",
     "tags": [
       "ui"
     ]
@@ -12,7 +12,7 @@
   "files": [
     {
       "name": "empty.tsx",
-      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { LuBird } from \"react-icons/lu\"\nimport { cn, forwardRef } from \"react-tvcx\"\n\nexport const Empty = forwardRef(function (\n  { as: Component = \"div\", children, className, ...props },\n  ref,\n) {\n  return (\n    <Component ref={ref} className={cn(\"flex min-h-56\", className)} {...props}>\n      <div className=\"m-auto flex flex-col items-center gap-4 p-4\">\n        <LuBird />\n        <div>{children ?? \"Not found\"}</div>\n      </div>\n    </Component>\n  )\n})\n\nEmpty.displayName = \"Empty\"\n\nexport default Empty\n"
+      "content": "\"use client\"\n\nimport { LuBird } from \"react-icons/lu\"\nimport { cn, forwardRef } from \"react-tvcx\"\n\nexport const Empty = forwardRef(function (\n  { as: Component = \"div\", children, className, ...props },\n  ref,\n) {\n  return (\n    <Component ref={ref} className={cn(\"flex min-h-56\", className)} {...props}>\n      <div className=\"m-auto flex flex-col items-center gap-4 p-4\">\n        <LuBird />\n        <div>{children ?? \"Not found\"}</div>\n      </div>\n    </Component>\n  )\n})\n\nEmpty.displayName = \"Empty\"\n\nexport default Empty\n"
     }
   ]
 }

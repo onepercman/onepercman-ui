@@ -4,7 +4,7 @@
     "name": "onepercman-ui",
     "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/accordion.tsx",
     "description": "",
-    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "license": "https://github.com/onepercman/onepercman-ui",
     "tags": [
       "ui"
     ]
@@ -12,7 +12,7 @@
   "files": [
     {
       "name": "accordion.tsx",
-      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { Accordion as BaseAccordion } from \"@ark-ui/react\"\nimport { createComponentFactory, createComponentTree } from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const accordion = tv({\n  base: \"\",\n  slots: {\n    item: \"flex flex-col\",\n    itemTrigger:\n      \"inline-flex w-full items-center justify-between gap-2 rounded\",\n    itemIndicator: [\"transition-all\", \"data-[state=open]:rotate-180\"],\n    itemContent: [\n      \"overflow-hidden !duration-150\",\n      \"data-[state=open]:animate-collapse\",\n      \"data-[state=closed]:animate-collapse data-[state=closed]:direction-reverse\",\n    ],\n  },\n})\n\nconst { withRoot, withSlot } = createComponentFactory(accordion)\n\nconst Root = withRoot(BaseAccordion.Root, \"base\")\nconst RootProvider = withSlot(BaseAccordion.RootProvider, \"base\")\nconst Context = withSlot(BaseAccordion.Context)\nconst ItemContext = withSlot(BaseAccordion.ItemContext)\nconst Item = withSlot(BaseAccordion.Item, \"item\")\nconst ItemTrigger = withSlot(BaseAccordion.ItemTrigger, \"itemTrigger\")\nconst ItemContent = withSlot(BaseAccordion.ItemContent, \"itemContent\")\nconst ItemIndicator = withSlot(BaseAccordion.ItemIndicator, \"itemIndicator\")\n\nexport const Accordion = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  ItemContext,\n  Item,\n  ItemTrigger,\n  ItemContent,\n  ItemIndicator,\n})\n\nAccordion.displayName = \"Accordion\"\n"
+      "content": "\"use client\"\n\nimport { Accordion as BaseAccordion } from \"@ark-ui/react\"\nimport { createComponentFactory, createComponentTree } from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const accordion = tv({\n  base: \"\",\n  slots: {\n    item: \"flex flex-col\",\n    itemTrigger:\n      \"inline-flex w-full items-center justify-between gap-2 rounded\",\n    itemIndicator: [\"transition-all\", \"data-[state=open]:rotate-180\"],\n    itemContent: [\n      \"overflow-hidden !duration-150\",\n      \"data-[state=open]:animate-collapse\",\n      \"data-[state=closed]:animate-collapse data-[state=closed]:direction-reverse\",\n    ],\n  },\n})\n\nconst { withRoot, withSlot } = createComponentFactory(accordion)\n\nconst Root = withRoot(BaseAccordion.Root, \"base\")\nconst RootProvider = withSlot(BaseAccordion.RootProvider, \"base\")\nconst Context = withSlot(BaseAccordion.Context)\nconst ItemContext = withSlot(BaseAccordion.ItemContext)\nconst Item = withSlot(BaseAccordion.Item, \"item\")\nconst ItemTrigger = withSlot(BaseAccordion.ItemTrigger, \"itemTrigger\")\nconst ItemContent = withSlot(BaseAccordion.ItemContent, \"itemContent\")\nconst ItemIndicator = withSlot(BaseAccordion.ItemIndicator, \"itemIndicator\")\n\nexport const Accordion = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  ItemContext,\n  Item,\n  ItemTrigger,\n  ItemContent,\n  ItemIndicator,\n})\n\nAccordion.displayName = \"Accordion\"\n"
     }
   ]
 }

@@ -4,7 +4,7 @@
     "name": "onepercman-ui",
     "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/number-input.tsx",
     "description": "",
-    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "license": "https://github.com/onepercman/onepercman-ui",
     "tags": [
       "ui"
     ]
@@ -12,7 +12,7 @@
   "files": [
     {
       "name": "number-input.tsx",
-      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { NumberInput as BaseNumberInput } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const numberInput = tv({\n  base: \"\",\n  slots: {\n    input: \"\",\n  },\n})\n\nconst { withRoot, withSlot } = createComponentFactory(numberInput)\n\nconst Root = withRoot(BaseNumberInput.Root)\nconst RootProvider = withRoot(BaseNumberInput.RootProvider)\nconst Context = withSlot(BaseNumberInput.Context)\nconst Control = withSlot(BaseNumberInput.Control)\nconst DecrementTrigger = withSlot(BaseNumberInput.DecrementTrigger)\nconst IncrementTrigger = withSlot(BaseNumberInput.IncrementTrigger)\nconst Input = withSlot(BaseNumberInput.Input)\nconst Label = withSlot(BaseNumberInput.Label)\nconst Scrubber = withSlot(BaseNumberInput.Scrubber)\nconst ValueText = withSlot(BaseNumberInput.ValueText)\n\nexport interface NumberInputProps extends ComposedTVProps<typeof numberInput> {}\n\nexport interface NumberInput extends ComponentMetadata {\n  (props: NumberInputProps): React.ReactElement | null\n}\n\nexport const NumberInput = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  Control,\n  DecrementTrigger,\n  IncrementTrigger,\n  Input,\n  Label,\n  Scrubber,\n  ValueText,\n})\n\nNumberInput.displayName = \"NumberInput\"\n"
+      "content": "\"use client\"\n\nimport { NumberInput as BaseNumberInput } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const numberInput = tv({\n  base: \"\",\n  slots: {\n    input: \"\",\n  },\n})\n\nconst { withRoot, withSlot } = createComponentFactory(numberInput)\n\nconst Root = withRoot(BaseNumberInput.Root)\nconst RootProvider = withRoot(BaseNumberInput.RootProvider)\nconst Context = withSlot(BaseNumberInput.Context)\nconst Control = withSlot(BaseNumberInput.Control)\nconst DecrementTrigger = withSlot(BaseNumberInput.DecrementTrigger)\nconst IncrementTrigger = withSlot(BaseNumberInput.IncrementTrigger)\nconst Input = withSlot(BaseNumberInput.Input)\nconst Label = withSlot(BaseNumberInput.Label)\nconst Scrubber = withSlot(BaseNumberInput.Scrubber)\nconst ValueText = withSlot(BaseNumberInput.ValueText)\n\nexport interface NumberInputProps extends ComposedTVProps<typeof numberInput> {}\n\nexport interface NumberInput extends ComponentMetadata {\n  (props: NumberInputProps): React.ReactElement | null\n}\n\nexport const NumberInput = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  Control,\n  DecrementTrigger,\n  IncrementTrigger,\n  Input,\n  Label,\n  Scrubber,\n  ValueText,\n})\n\nNumberInput.displayName = \"NumberInput\"\n"
     }
   ]
 }

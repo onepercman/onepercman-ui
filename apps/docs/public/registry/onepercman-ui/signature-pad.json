@@ -4,7 +4,7 @@
     "name": "onepercman-ui",
     "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/signature-pad.tsx",
     "description": "",
-    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "license": "https://github.com/onepercman/onepercman-ui",
     "tags": [
       "ui"
     ]
@@ -12,7 +12,7 @@
   "files": [
     {
       "name": "signature-pad.tsx",
-      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { SignaturePad as BaseSignaturePad } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const signaturePad = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(signaturePad)\n\nconst Root = withRoot(BaseSignaturePad.Root)\nconst RootProvider = withRoot(BaseSignaturePad.RootProvider)\nconst ClearTrigger = withSlot(BaseSignaturePad.ClearTrigger)\nconst Context = withSlot(BaseSignaturePad.Context)\nconst Control = withSlot(BaseSignaturePad.Control)\nconst Guide = withSlot(BaseSignaturePad.Guide)\nconst HiddenInput = withSlot(BaseSignaturePad.HiddenInput)\nconst Label = withSlot(BaseSignaturePad.Label)\nconst Segment = withSlot(BaseSignaturePad.Segment)\n\nexport interface SignaturePadProps\n  extends ComposedTVProps<typeof signaturePad> {}\n\nexport interface SignaturePad extends ComponentMetadata {\n  (props: SignaturePadProps): React.ReactElement | null\n}\n\nexport const SignaturePad = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  ClearTrigger,\n  Context,\n  Control,\n  Guide,\n  HiddenInput,\n  Label,\n  Segment,\n})\n\nSignaturePad.displayName = \"SignaturePad\"\n"
+      "content": "\"use client\"\n\nimport { SignaturePad as BaseSignaturePad } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const signaturePad = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(signaturePad)\n\nconst Root = withRoot(BaseSignaturePad.Root)\nconst RootProvider = withRoot(BaseSignaturePad.RootProvider)\nconst ClearTrigger = withSlot(BaseSignaturePad.ClearTrigger)\nconst Context = withSlot(BaseSignaturePad.Context)\nconst Control = withSlot(BaseSignaturePad.Control)\nconst Guide = withSlot(BaseSignaturePad.Guide)\nconst HiddenInput = withSlot(BaseSignaturePad.HiddenInput)\nconst Label = withSlot(BaseSignaturePad.Label)\nconst Segment = withSlot(BaseSignaturePad.Segment)\n\nexport interface SignaturePadProps\n  extends ComposedTVProps<typeof signaturePad> {}\n\nexport interface SignaturePad extends ComponentMetadata {\n  (props: SignaturePadProps): React.ReactElement | null\n}\n\nexport const SignaturePad = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  ClearTrigger,\n  Context,\n  Control,\n  Guide,\n  HiddenInput,\n  Label,\n  Segment,\n})\n\nSignaturePad.displayName = \"SignaturePad\"\n"
     }
   ]
 }

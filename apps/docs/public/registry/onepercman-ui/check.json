@@ -4,7 +4,7 @@
     "name": "onepercman-ui",
     "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/check.tsx",
     "description": "",
-    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "license": "https://github.com/onepercman/onepercman-ui",
     "tags": [
       "ui"
     ]
@@ -12,7 +12,7 @@
   "files": [
     {
       "name": "check.tsx",
-      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport React from \"react\"\n\nexport const Check = React.forwardRef<\n  SVGSVGElement,\n  React.SVGAttributes<SVGSVGElement>\n>(function (props, ref) {\n  return (\n    <svg\n      ref={ref}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"1em\"\n      height=\"1em\"\n      viewBox=\"0 0 52 52\"\n      stroke=\"currentColor\"\n      {...props}\n    >\n      <path\n        fill=\"none\"\n        strokeWidth=\"8\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        d=\"M10 27l10 12 25-25\"\n        strokeDasharray=\"50\"\n        strokeDashoffset=\"50\"\n      >\n        <animate\n          attributeName=\"stroke-dashoffset\"\n          values=\"50;0\"\n          dur=\"0.1s\"\n          fill=\"freeze\"\n        />\n      </path>\n    </svg>\n  )\n})\n\nCheck.displayName = \"Check\"\n"
+      "content": "\"use client\"\n\nimport React from \"react\"\n\nexport const Check = React.forwardRef<\n  SVGSVGElement,\n  React.SVGAttributes<SVGSVGElement>\n>(function (props, ref) {\n  return (\n    <svg\n      ref={ref}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"1em\"\n      height=\"1em\"\n      viewBox=\"0 0 52 52\"\n      stroke=\"currentColor\"\n      {...props}\n    >\n      <path\n        fill=\"none\"\n        strokeWidth=\"8\"\n        strokeLinecap=\"round\"\n        strokeLinejoin=\"round\"\n        d=\"M10 27l10 12 25-25\"\n        strokeDasharray=\"50\"\n        strokeDashoffset=\"50\"\n      >\n        <animate\n          attributeName=\"stroke-dashoffset\"\n          values=\"50;0\"\n          dur=\"0.1s\"\n          fill=\"freeze\"\n        />\n      </path>\n    </svg>\n  )\n})\n\nCheck.displayName = \"Check\"\n"
     }
   ]
 }

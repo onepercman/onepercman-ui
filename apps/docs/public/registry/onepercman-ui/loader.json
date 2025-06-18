@@ -4,7 +4,7 @@
     "name": "onepercman-ui",
     "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/loader.tsx",
     "description": "",
-    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "license": "https://github.com/onepercman/onepercman-ui",
     "tags": [
       "ui"
     ]
@@ -12,7 +12,7 @@
   "files": [
     {
       "name": "loader.tsx",
-      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { cn, forwardRef } from \"react-tvcx\"\nimport { Spinner } from \"./spinner\"\n\nexport const Loader = forwardRef(function (\n  { as: Component = \"div\", children, className, ...props },\n  ref,\n) {\n  return (\n    <Component ref={ref} className={cn(\"flex min-h-56\", className)} {...props}>\n      <div className=\"m-auto flex flex-col items-center gap-4 p-4\">\n        <Spinner />\n      </div>\n    </Component>\n  )\n})\n\nLoader.displayName = \"Loader\"\n\nexport default Loader\n"
+      "content": "\"use client\"\n\nimport { cn, forwardRef } from \"react-tvcx\"\nimport { Spinner } from \"./spinner\"\n\nexport const Loader = forwardRef(function (\n  { as: Component = \"div\", children, className, ...props },\n  ref,\n) {\n  return (\n    <Component ref={ref} className={cn(\"flex min-h-56\", className)} {...props}>\n      <div className=\"m-auto flex flex-col items-center gap-4 p-4\">\n        <Spinner />\n      </div>\n    </Component>\n  )\n})\n\nLoader.displayName = \"Loader\"\n\nexport default Loader\n"
     }
   ]
 }

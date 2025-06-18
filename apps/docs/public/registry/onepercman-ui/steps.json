@@ -4,7 +4,7 @@
     "name": "onepercman-ui",
     "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/steps.tsx",
     "description": "",
-    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "license": "https://github.com/onepercman/onepercman-ui",
     "tags": [
       "ui"
     ]
@@ -12,7 +12,7 @@
   "files": [
     {
       "name": "steps.tsx",
-      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { Steps as BaseSteps } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const steps = tv({\n  base: \"\",\n  slots: {},\n})\n\nconst { withRoot, withSlot } = createComponentFactory(steps)\n\nconst Root = withRoot(BaseSteps.Root, \"base\")\nconst CompletedContent = withSlot(BaseSteps.CompletedContent)\nconst Content = withSlot(BaseSteps.Content)\nconst Context = withSlot(BaseSteps.Context)\nconst Indicator = withSlot(BaseSteps.Indicator)\nconst Item = withSlot(BaseSteps.Item)\nconst ItemContext = withSlot(BaseSteps.ItemContext)\nconst List = withSlot(BaseSteps.List)\nconst NextTrigger = withSlot(BaseSteps.NextTrigger)\nconst PrevTrigger = withSlot(BaseSteps.PrevTrigger)\nconst Progress = withSlot(BaseSteps.Progress)\nconst Separator = withSlot(BaseSteps.Separator)\nconst Trigger = withSlot(BaseSteps.Trigger)\n\nexport interface StepsProps extends ComposedTVProps<typeof steps> {}\n\nexport interface Steps extends ComponentMetadata {\n  (props: StepsProps): React.ReactElement | null\n}\n\nexport const Steps = createComponentTree(Root, {\n  Root,\n  CompletedContent,\n  Content,\n  Context,\n  Indicator,\n  Item,\n  ItemContext,\n  List,\n  NextTrigger,\n  PrevTrigger,\n  Progress,\n  Separator,\n  Trigger,\n})\n\nSteps.displayName = \"Steps\"\n"
+      "content": "\"use client\"\n\nimport { Steps as BaseSteps } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const steps = tv({\n  base: \"\",\n  slots: {},\n})\n\nconst { withRoot, withSlot } = createComponentFactory(steps)\n\nconst Root = withRoot(BaseSteps.Root, \"base\")\nconst CompletedContent = withSlot(BaseSteps.CompletedContent)\nconst Content = withSlot(BaseSteps.Content)\nconst Context = withSlot(BaseSteps.Context)\nconst Indicator = withSlot(BaseSteps.Indicator)\nconst Item = withSlot(BaseSteps.Item)\nconst ItemContext = withSlot(BaseSteps.ItemContext)\nconst List = withSlot(BaseSteps.List)\nconst NextTrigger = withSlot(BaseSteps.NextTrigger)\nconst PrevTrigger = withSlot(BaseSteps.PrevTrigger)\nconst Progress = withSlot(BaseSteps.Progress)\nconst Separator = withSlot(BaseSteps.Separator)\nconst Trigger = withSlot(BaseSteps.Trigger)\n\nexport interface StepsProps extends ComposedTVProps<typeof steps> {}\n\nexport interface Steps extends ComponentMetadata {\n  (props: StepsProps): React.ReactElement | null\n}\n\nexport const Steps = createComponentTree(Root, {\n  Root,\n  CompletedContent,\n  Content,\n  Context,\n  Indicator,\n  Item,\n  ItemContext,\n  List,\n  NextTrigger,\n  PrevTrigger,\n  Progress,\n  Separator,\n  Trigger,\n})\n\nSteps.displayName = \"Steps\"\n"
     }
   ]
 }

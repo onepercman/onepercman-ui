@@ -4,7 +4,7 @@
     "name": "onepercman-ui",
     "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/pin-input.tsx",
     "description": "",
-    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "license": "https://github.com/onepercman/onepercman-ui",
     "tags": [
       "ui"
     ]
@@ -12,7 +12,7 @@
   "files": [
     {
       "name": "pin-input.tsx",
-      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { PinInput as BasePinInput } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const pinInput = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(pinInput)\n\nconst Root = withRoot(BasePinInput.Root)\nconst RootProvider = withRoot(BasePinInput.RootProvider)\nconst Context = withSlot(BasePinInput.Context)\nconst Control = withSlot(BasePinInput.Control)\nconst HiddenInput = withSlot(BasePinInput.HiddenInput)\nconst Input = withSlot(BasePinInput.Input)\nconst Label = withSlot(BasePinInput.Label)\n\nexport interface PinInputProps extends ComposedTVProps<typeof pinInput> {}\n\nexport interface PinInput extends ComponentMetadata {\n  (props: PinInputProps): React.ReactElement | null\n}\n\nexport const PinInput = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  Control,\n  HiddenInput,\n  Input,\n  Label,\n})\n\nPinInput.displayName = \"PinInput\"\n"
+      "content": "\"use client\"\n\nimport { PinInput as BasePinInput } from \"@ark-ui/react\"\nimport {\n  ComponentMetadata,\n  ComposedTVProps,\n  createComponentFactory,\n  createComponentTree,\n} from \"react-tvcx\"\nimport { tv } from \"tailwind-variants\"\n\nexport const pinInput = tv({\n  base: \"\",\n})\n\nconst { withRoot, withSlot } = createComponentFactory(pinInput)\n\nconst Root = withRoot(BasePinInput.Root)\nconst RootProvider = withRoot(BasePinInput.RootProvider)\nconst Context = withSlot(BasePinInput.Context)\nconst Control = withSlot(BasePinInput.Control)\nconst HiddenInput = withSlot(BasePinInput.HiddenInput)\nconst Input = withSlot(BasePinInput.Input)\nconst Label = withSlot(BasePinInput.Label)\n\nexport interface PinInputProps extends ComposedTVProps<typeof pinInput> {}\n\nexport interface PinInput extends ComponentMetadata {\n  (props: PinInputProps): React.ReactElement | null\n}\n\nexport const PinInput = createComponentTree(Root, {\n  Root,\n  RootProvider,\n  Context,\n  Control,\n  HiddenInput,\n  Input,\n  Label,\n})\n\nPinInput.displayName = \"PinInput\"\n"
     }
   ]
 }

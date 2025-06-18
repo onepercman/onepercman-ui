@@ -4,7 +4,7 @@
     "name": "onepercman-ui",
     "source": "https://github.com/onepercman/onepercman-ui/blob/main/packages/ui/src/countdown.tsx",
     "description": "",
-    "license": "https://github.com/onepercman/onepercman-ui/tree/main",
+    "license": "https://github.com/onepercman/onepercman-ui",
     "tags": [
       "ui"
     ]
@@ -12,7 +12,7 @@
   "files": [
     {
       "name": "countdown.tsx",
-      "content": "// onepercman-ui\n// https://github.com/onepercman/onepercman-ui\n\"use client\"\n\nimport { cn, forwardRef } from \"react-tvcx\"\n\nexport interface CountdownProps {\n  value?: number\n  maxValue?: number\n}\n\nfunction pad(d: number): string {\n  return d < 10 ? \"0\" + d.toString() : d.toString()\n}\n\nfunction generateNumbers(maxValue: number) {\n  return Array(maxValue + 1)\n    .fill(0)\n    .map((_, index) => [pad(index), <br key={index} />])\n}\n\nexport const Countdown = forwardRef<\"span\", CountdownProps>(function (\n  { as: Component = \"span\", value = 0, className, maxValue = 99, ...props },\n  ref,\n) {\n  return (\n    <Component ref={ref} className={cn(className, \"inline-flex\")}>\n      <span className=\"inline-block h-[1em] overflow-hidden\" {...props}>\n        <span\n          className=\"ease-expo relative block whitespace-pre text-center leading-none transition-all duration-500\"\n          style={{\n            top: -value + \"em\",\n          }}\n        >\n          {generateNumbers(maxValue)}\n        </span>\n      </span>\n    </Component>\n  )\n})\n\nCountdown.displayName = \"Countdown\"\n"
+      "content": "\"use client\"\n\nimport { cn, forwardRef } from \"react-tvcx\"\n\nexport interface CountdownProps {\n  value?: number\n  maxValue?: number\n}\n\nfunction pad(d: number): string {\n  return d < 10 ? \"0\" + d.toString() : d.toString()\n}\n\nfunction generateNumbers(maxValue: number) {\n  return Array(maxValue + 1)\n    .fill(0)\n    .map((_, index) => [pad(index), <br key={index} />])\n}\n\nexport const Countdown = forwardRef<\"span\", CountdownProps>(function (\n  { as: Component = \"span\", value = 0, className, maxValue = 99, ...props },\n  ref,\n) {\n  return (\n    <Component ref={ref} className={cn(className, \"inline-flex\")}>\n      <span className=\"inline-block h-[1em] overflow-hidden\" {...props}>\n        <span\n          className=\"ease-expo relative block whitespace-pre text-center leading-none transition-all duration-500\"\n          style={{\n            top: -value + \"em\",\n          }}\n        >\n          {generateNumbers(maxValue)}\n        </span>\n      </span>\n    </Component>\n  )\n})\n\nCountdown.displayName = \"Countdown\"\n"
     }
   ]
 }
