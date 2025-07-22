@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { Slider as BaseSlider } from "@ark-ui/react"
+import { Slider as BaseSlider } from "@ark-ui/react";
 import {
   ComponentMetadata,
   ComposedTVProps,
   createComponentFactory,
   createComponentTree,
-} from "react-tvcx"
-import { tv } from "tailwind-variants"
+} from "react-tvcx";
+import { tv } from "tailwind-variants";
 
 export const slider = tv({
   base: "flex flex-col gap-1",
   slots: {
-    label: "inline-flex justify-between gap-2 text-xs text-secondary",
+    label: "inline-flex justify-between gap-2 text-xs text-muted-foreground",
     valueText: "",
     control: "inline-flex cursor-pointer items-center gap-2",
-    track: "relative grow overflow-hidden rounded bg-default",
+    track: "relative grow overflow-hidden rounded-full bg-component",
     range: "absolute h-full bg-primary",
     thumb: "-top-1/2 rounded-full bg-foreground",
     marker: "",
@@ -43,27 +43,27 @@ export const slider = tv({
     variant: "solid",
     size: "md",
   },
-})
+});
 
-const { withRoot, withSlot } = createComponentFactory(slider)
+const { withRoot, withSlot } = createComponentFactory(slider);
 
-const Root = withRoot(BaseSlider.Root)
-const RootProvider = withRoot(BaseSlider.RootProvider)
-const Context = withSlot(BaseSlider.Context)
-const Control = withSlot(BaseSlider.Control)
-const HiddenInput = withSlot(BaseSlider.HiddenInput)
-const Label = withSlot(BaseSlider.Label)
-const Marker = withSlot(BaseSlider.Marker)
-const MarkerGroup = withSlot(BaseSlider.MarkerGroup)
-const Range = withSlot(BaseSlider.Range)
-const Thumb = withSlot(BaseSlider.Thumb)
-const Track = withSlot(BaseSlider.Track)
-const ValueText = withSlot(BaseSlider.ValueText)
+const Root = withRoot(BaseSlider.Root);
+const RootProvider = withRoot(BaseSlider.RootProvider);
+const Context = withSlot(BaseSlider.Context);
+const Control = withSlot(BaseSlider.Control);
+const HiddenInput = withSlot(BaseSlider.HiddenInput);
+const Label = withSlot(BaseSlider.Label);
+const Marker = withSlot(BaseSlider.Marker);
+const MarkerGroup = withSlot(BaseSlider.MarkerGroup);
+const Range = withSlot(BaseSlider.Range);
+const Thumb = withSlot(BaseSlider.Thumb);
+const Track = withSlot(BaseSlider.Track);
+const ValueText = withSlot(BaseSlider.ValueText);
 
 export interface SliderProps extends ComposedTVProps<typeof slider> {}
 
 export interface Slider extends ComponentMetadata {
-  (props: SliderProps): React.ReactElement | null
+  (props: SliderProps): React.ReactElement | null;
 }
 
 export const Slider = createComponentTree(Root, {
@@ -79,6 +79,6 @@ export const Slider = createComponentTree(Root, {
   Thumb,
   Track,
   ValueText,
-})
+});
 
-Slider.displayName = "Slider"
+Slider.displayName = "Slider";

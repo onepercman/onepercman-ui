@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import { Popover as BasePopover } from "@ark-ui/react"
-import React from "react"
+import { Popover as BasePopover } from "@ark-ui/react";
+import React from "react";
 import {
   ComponentMetadata,
   ComposedTVProps,
   createComponentFactory,
   createComponentTree,
-} from "react-tvcx"
-import { tv } from "tailwind-variants"
+} from "react-tvcx";
+import { tv } from "tailwind-variants";
 
 export const popover = tv({
   slots: {
     content: [
-      "z-[var(--z-index)] rounded border border-line bg-component px-3 py-2 shadow-lg",
+      "z-[var(--z-index)] rounded-md border border-border bg-popover px-3 py-2 shadow-lg",
       "data-[state=open]:animate-in",
       "data-[state=open]:fade-in",
       "data-[state=closed]:animate-out",
       "data-[state=closed]:fade-out",
     ],
     arrow: "",
-    arrowTip: "border-l border-t border-line !bg-component",
+    arrowTip: "border-l border-t border-border !bg-popover",
   },
   variants: {
     size: {
@@ -36,23 +36,23 @@ export const popover = tv({
     size: "md",
     arrowSize: "md",
   },
-})
+});
 
-const { withRoot, withSlot } = createComponentFactory(popover)
+const { withRoot, withSlot } = createComponentFactory(popover);
 
-const Root = withRoot(BasePopover.Root)
-const RootProvider = withRoot(BasePopover.RootProvider)
-const Anchor = withSlot(BasePopover.Anchor)
-const Arrow = withSlot(BasePopover.Arrow, "arrow")
-const ArrowTip = withSlot(BasePopover.ArrowTip, "arrowTip")
-const CloseTrigger = withSlot(BasePopover.CloseTrigger)
-const Context = withSlot(BasePopover.Context)
-const Content = withSlot(BasePopover.Content, "content")
-const Description = withSlot(BasePopover.Description)
-const Indicator = withSlot(BasePopover.Indicator)
-const Positioner = withSlot(BasePopover.Positioner)
-const Title = withSlot(BasePopover.Title)
-const Trigger = withSlot(BasePopover.Trigger)
+const Root = withRoot(BasePopover.Root);
+const RootProvider = withRoot(BasePopover.RootProvider);
+const Anchor = withSlot(BasePopover.Anchor);
+const Arrow = withSlot(BasePopover.Arrow, "arrow");
+const ArrowTip = withSlot(BasePopover.ArrowTip, "arrowTip");
+const CloseTrigger = withSlot(BasePopover.CloseTrigger);
+const Context = withSlot(BasePopover.Context);
+const Content = withSlot(BasePopover.Content, "content");
+const Description = withSlot(BasePopover.Description);
+const Indicator = withSlot(BasePopover.Indicator);
+const Positioner = withSlot(BasePopover.Positioner);
+const Title = withSlot(BasePopover.Title);
+const Trigger = withSlot(BasePopover.Trigger);
 
 const CustomContent = React.forwardRef<
   React.ElementRef<typeof Content>,
@@ -64,10 +64,10 @@ const CustomContent = React.forwardRef<
         {children}
       </Content>
     </Positioner>
-  )
-})
+  );
+});
 
-CustomContent.displayName = "Content"
+CustomContent.displayName = "Content";
 
 const CustomArrow = React.forwardRef<
   React.ElementRef<typeof Arrow>,
@@ -77,15 +77,15 @@ const CustomArrow = React.forwardRef<
     <Arrow ref={ref} {...props}>
       <ArrowTip />
     </Arrow>
-  )
-})
+  );
+});
 
-CustomArrow.displayName = "Arrow"
+CustomArrow.displayName = "Arrow";
 
 export interface PopoverProps extends ComposedTVProps<typeof popover> {}
 
 export interface Popover extends ComponentMetadata {
-  (props: PopoverProps): React.ReactElement | null
+  (props: PopoverProps): React.ReactElement | null;
 }
 
 export const Popover = createComponentTree(Root, {
@@ -102,6 +102,6 @@ export const Popover = createComponentTree(Root, {
   Positioner,
   Title,
   Trigger,
-})
+});
 
-Popover.displayName = "Popover"
+Popover.displayName = "Popover";

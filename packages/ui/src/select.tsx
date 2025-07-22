@@ -1,37 +1,37 @@
-"use client"
+"use client";
 
 import {
   Select as BaseSelect,
   CollectionItem,
   SelectRootProps,
-} from "@ark-ui/react"
-import React from "react"
+} from "@ark-ui/react";
+import React from "react";
 import {
   ComponentMetadata,
   ComposedTVProps,
   createComponentFactory,
   createComponentTree,
-} from "react-tvcx"
-import { tv } from "tailwind-variants"
+} from "react-tvcx";
+import { tv } from "tailwind-variants";
 
 export const select = tv({
   base: "",
   slots: {
-    trigger: "data-[placeholder-shown]:text-secondary",
+    trigger: "data-[placeholder-shown]:text-muted-foreground",
     valueText: "grow text-left",
-    clearTrigger: "text-secondary",
-    indicator: "text-secondary",
+    clearTrigger: "text-muted-foreground",
+    indicator: "text-muted-foreground",
     content: [
-      "flex w-full flex-col overflow-hidden rounded bg-component p-2 shadow-lg",
+      "flex w-full flex-col overflow-hidden rounded-md bg-popover p-2 shadow-lg",
       "data-[state=open]:animate-in",
       "data-[state=open]:fade-in",
       "data-[state=closed]:animate-out",
       "data-[state=closed]:fade-out",
     ],
     itemGroup: "flex flex-col",
-    itemGroupLabel: "w-full px-2 py-1 text-xs text-secondary",
+    itemGroupLabel: "w-full px-2 py-1 text-xs text-muted-foreground",
     item: [
-      "relative inline-flex cursor-pointer select-none items-start justify-between gap-2 rounded py-2 pl-3 pr-8 font-medium hover:bg-foreground/5",
+      "relative inline-flex cursor-pointer select-none items-start justify-between gap-2 rounded-md py-2 pl-3 pr-8 font-medium hover:bg-component/80",
       "data-[state=checked]:text-primary",
       "data-[disabled]:cursor-not-allowed data-[disabled]:text-muted",
     ],
@@ -49,34 +49,34 @@ export const select = tv({
     invalid: {
       true: {
         label: "text-error",
-        trigger: "border-2 border-error bg-error/10 !text-error",
+        trigger: "border-2 border-error bg-error-subtle !text-error",
       },
     },
   },
   defaultVariants: { size: "md" },
-})
+});
 
-const { withRoot, withSlot } = createComponentFactory(select)
+const { withRoot, withSlot } = createComponentFactory(select);
 
-const Root = withRoot(BaseSelect.Root, "base")
-const RootProvider = withRoot(BaseSelect.RootProvider, "base")
-const Context = withSlot(BaseSelect.Context)
-const ItemContext = withSlot(BaseSelect.ItemContext)
-const Label = withSlot(BaseSelect.Label)
-const Control = withSlot(BaseSelect.Control)
-const Trigger = withSlot(BaseSelect.Trigger, "trigger")
-const ValueText = withSlot(BaseSelect.ValueText, "valueText")
-const ClearTrigger = withSlot(BaseSelect.ClearTrigger, "clearTrigger")
-const Indicator = withSlot(BaseSelect.Indicator, "indicator")
-const HiddenSelect = withSlot(BaseSelect.HiddenSelect)
-const Positioner = withSlot(BaseSelect.Positioner)
-const List = withSlot(BaseSelect.List)
-const Content = withSlot(BaseSelect.Content, "content")
-const ItemGroup = withSlot(BaseSelect.ItemGroup, "itemGroup")
-const ItemGroupLabel = withSlot(BaseSelect.ItemGroupLabel, "itemGroupLabel")
-const Item = withSlot(BaseSelect.Item, "item")
-const ItemText = withSlot(BaseSelect.ItemText, "itemText")
-const ItemIndicator = withSlot(BaseSelect.ItemIndicator, "itemIndicator")
+const Root = withRoot(BaseSelect.Root, "base");
+const RootProvider = withRoot(BaseSelect.RootProvider, "base");
+const Context = withSlot(BaseSelect.Context);
+const ItemContext = withSlot(BaseSelect.ItemContext);
+const Label = withSlot(BaseSelect.Label);
+const Control = withSlot(BaseSelect.Control);
+const Trigger = withSlot(BaseSelect.Trigger, "trigger");
+const ValueText = withSlot(BaseSelect.ValueText, "valueText");
+const ClearTrigger = withSlot(BaseSelect.ClearTrigger, "clearTrigger");
+const Indicator = withSlot(BaseSelect.Indicator, "indicator");
+const HiddenSelect = withSlot(BaseSelect.HiddenSelect);
+const Positioner = withSlot(BaseSelect.Positioner);
+const List = withSlot(BaseSelect.List);
+const Content = withSlot(BaseSelect.Content, "content");
+const ItemGroup = withSlot(BaseSelect.ItemGroup, "itemGroup");
+const ItemGroupLabel = withSlot(BaseSelect.ItemGroupLabel, "itemGroupLabel");
+const Item = withSlot(BaseSelect.Item, "item");
+const ItemText = withSlot(BaseSelect.ItemText, "itemText");
+const ItemIndicator = withSlot(BaseSelect.ItemIndicator, "itemIndicator");
 
 export interface SelectProps<T extends CollectionItem>
   extends SelectRootProps<T>,
@@ -84,24 +84,24 @@ export interface SelectProps<T extends CollectionItem>
 
 export interface Select extends ComponentMetadata {
   <T extends CollectionItem>(
-    props: SelectProps<T> & React.RefAttributes<Select>,
-  ): JSX.Element
+    props: SelectProps<T> & React.RefAttributes<Select>
+  ): JSX.Element;
 }
 
 function _bootstrap<T extends CollectionItem>(
   render: (
     props: SelectProps<T>,
-    ref: React.ForwardedRef<React.ElementRef<typeof Root>>,
-  ) => React.ReactElement | null,
+    ref: React.ForwardedRef<React.ElementRef<typeof Root>>
+  ) => React.ReactElement | null
 ) {
   return React.forwardRef<React.ElementRef<typeof Root>, SelectProps<T>>(
-    render,
-  ) as unknown as Select
+    render
+  ) as unknown as Select;
 }
 
 const CustomRoot = _bootstrap(function (
   { children, positioning, ...props },
-  ref,
+  ref
 ) {
   return (
     <Root
@@ -113,8 +113,8 @@ const CustomRoot = _bootstrap(function (
       {children}
       <HiddenSelect />
     </Root>
-  )
-})
+  );
+});
 
 const CustomContent = React.forwardRef<
   React.ElementRef<typeof Content>,
@@ -126,10 +126,10 @@ const CustomContent = React.forwardRef<
         {children}
       </Content>
     </Positioner>
-  )
-})
+  );
+});
 
-CustomContent.displayName = "Content"
+CustomContent.displayName = "Content";
 
 export const Select = createComponentTree(CustomRoot, {
   Root: Root as Select,
@@ -151,6 +151,6 @@ export const Select = createComponentTree(CustomRoot, {
   Item,
   ItemText,
   ItemIndicator,
-})
+});
 
-Select.displayName = "Select"
+Select.displayName = "Select";

@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { Switch as BaseSwitch, SwitchRootProps } from "@ark-ui/react"
-import React from "react"
+import { Switch as BaseSwitch, SwitchRootProps } from "@ark-ui/react";
+import React from "react";
 import {
   ComponentMetadata,
   ComposedTVProps,
   createComponentFactory,
   createComponentTree,
-} from "react-tvcx"
-import { tv } from "tailwind-variants"
+} from "react-tvcx";
+import { tv } from "tailwind-variants";
 
 export const switchVariants = tv({
   base: "inline-flex cursor-pointer items-center gap-2",
   slots: {
     label: "",
     control: [
-      "relative flex rounded-full bg-default transition-colors",
+      "relative flex rounded-full bg-component transition-colors",
       "data-[state=checked]:bg-primary",
     ],
     thumb: [
@@ -63,26 +63,26 @@ export const switchVariants = tv({
     variant: "outlined",
     color: "primary",
   },
-})
+});
 
-const { withRoot, withSlot } = createComponentFactory(switchVariants)
+const { withRoot, withSlot } = createComponentFactory(switchVariants);
 
-const Root = withRoot(BaseSwitch.Root)
-const RootProvider = withRoot(BaseSwitch.RootProvider)
-const Context = withSlot(BaseSwitch.Context)
-const Control = withSlot(BaseSwitch.Control)
-const HiddenInput = withSlot(BaseSwitch.HiddenInput)
-const Label = withSlot(BaseSwitch.Label)
-const Thumb = withSlot(BaseSwitch.Thumb)
+const Root = withRoot(BaseSwitch.Root);
+const RootProvider = withRoot(BaseSwitch.RootProvider);
+const Context = withSlot(BaseSwitch.Context);
+const Control = withSlot(BaseSwitch.Control);
+const HiddenInput = withSlot(BaseSwitch.HiddenInput);
+const Label = withSlot(BaseSwitch.Label);
+const Thumb = withSlot(BaseSwitch.Thumb);
 
 export interface SwitchProps
   extends SwitchRootProps,
     ComposedTVProps<typeof switchVariants> {
-  indeterminate?: boolean
+  indeterminate?: boolean;
 }
 
 export interface Switch extends ComponentMetadata {
-  (props: SwitchProps): React.ReactElement | null
+  (props: SwitchProps): React.ReactElement | null;
 }
 
 export const Switch = createComponentTree(Root, {
@@ -93,6 +93,6 @@ export const Switch = createComponentTree(Root, {
   HiddenInput,
   Label,
   Thumb,
-})
+});
 
-Switch.displayName = "Switch"
+Switch.displayName = "Switch";

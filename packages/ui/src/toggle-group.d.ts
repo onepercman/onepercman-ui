@@ -1,0 +1,18 @@
+import { ToggleGroup as BaseToggleGroup } from "@ark-ui/react";
+import { ComponentMetadata, ComposedTVProps } from "react-tvcx";
+export declare const toggleGroup: import("tailwind-variants").TVReturnType<{} | {} | {}, undefined, "", {} | {}, undefined, import("tailwind-variants").TVReturnType<unknown, undefined, "", unknown, unknown, undefined>>;
+export interface ToggleGroupProps extends ComposedTVProps<typeof toggleGroup> {
+}
+export interface ToggleGroup extends ComponentMetadata {
+    (props: ToggleGroupProps): React.ReactElement | null;
+}
+export declare const ToggleGroup: import("react").ForwardRefExoticComponent<Omit<BaseToggleGroup.RootProps & import("react").RefAttributes<HTMLDivElement>, "ref"> & import("tailwind-variants").VariantProps<import("tailwind-variants").TVReturnType<{} | {} | {}, undefined, "", {} | {}, undefined, import("tailwind-variants").TVReturnType<unknown, undefined, "", unknown, unknown, undefined>>> & object & import("react-tvcx").UnstyledProps & import("react").RefAttributes<HTMLDivElement>> & {
+    RootProvider: import("react").ForwardRefExoticComponent<Omit<BaseToggleGroup.RootProviderProps & import("react").RefAttributes<HTMLDivElement>, "ref"> & import("tailwind-variants").VariantProps<import("tailwind-variants").TVReturnType<{} | {} | {}, undefined, "", {} | {}, undefined, import("tailwind-variants").TVReturnType<unknown, undefined, "", unknown, unknown, undefined>>> & object & import("react-tvcx").UnstyledProps & import("react").RefAttributes<HTMLDivElement>>;
+    Context: import("react").ForwardRefExoticComponent<BaseToggleGroup.ContextProps & import("tailwind-variants").VariantProps<import("tailwind-variants").TVReturnType<{} | {} | {}, undefined, "", {} | {}, undefined, import("tailwind-variants").TVReturnType<unknown, undefined, "", unknown, unknown, undefined>>> & import("react-tvcx").UnstyledProps & import("react").RefAttributes<never>>;
+    Item: import("react").ForwardRefExoticComponent<Omit<BaseToggleGroup.ItemProps & import("react").RefAttributes<HTMLButtonElement>, "ref"> & import("tailwind-variants").VariantProps<import("tailwind-variants").TVReturnType<{} | {} | {}, undefined, "", {} | {}, undefined, import("tailwind-variants").TVReturnType<unknown, undefined, "", unknown, unknown, undefined>>> & import("react-tvcx").UnstyledProps & import("react").RefAttributes<HTMLButtonElement>>;
+} & Readonly<{
+    RootProvider: import("react").ForwardRefExoticComponent<Omit<BaseToggleGroup.RootProviderProps & import("react").RefAttributes<HTMLDivElement>, "ref"> & import("tailwind-variants").VariantProps<import("tailwind-variants").TVReturnType<{} | {} | {}, undefined, "", {} | {}, undefined, import("tailwind-variants").TVReturnType<unknown, undefined, "", unknown, unknown, undefined>>> & object & import("react-tvcx").UnstyledProps & import("react").RefAttributes<HTMLDivElement>>;
+    Context: import("react").ForwardRefExoticComponent<BaseToggleGroup.ContextProps & import("tailwind-variants").VariantProps<import("tailwind-variants").TVReturnType<{} | {} | {}, undefined, "", {} | {}, undefined, import("tailwind-variants").TVReturnType<unknown, undefined, "", unknown, unknown, undefined>>> & import("react-tvcx").UnstyledProps & import("react").RefAttributes<never>>;
+    Item: import("react").ForwardRefExoticComponent<Omit<BaseToggleGroup.ItemProps & import("react").RefAttributes<HTMLButtonElement>, "ref"> & import("tailwind-variants").VariantProps<import("tailwind-variants").TVReturnType<{} | {} | {}, undefined, "", {} | {}, undefined, import("tailwind-variants").TVReturnType<unknown, undefined, "", unknown, unknown, undefined>>> & import("react-tvcx").UnstyledProps & import("react").RefAttributes<HTMLButtonElement>>;
+}>;
+//# sourceMappingURL=toggle-group.d.ts.map

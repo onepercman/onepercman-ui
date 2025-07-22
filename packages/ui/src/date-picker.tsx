@@ -1,24 +1,24 @@
-"use client"
+"use client";
 
 import {
   DatePicker as BaseDatePicker,
   DatePickerRootProps,
-} from "@ark-ui/react"
-import React, { Fragment } from "react"
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
+} from "@ark-ui/react";
+import React, { Fragment } from "react";
+import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import {
   ComponentMetadata,
   ComposedTVProps,
   createComponentFactory,
   createComponentTree,
-} from "react-tvcx"
-import { tv } from "tailwind-variants"
-import { Button } from "./button"
+} from "react-tvcx";
+import { tv } from "tailwind-variants";
+import { Button } from "./button";
 
 export const datePicker = tv({
   slots: {
     content: [
-      "w-fit rounded border border-line bg-component p-2 shadow",
+      "w-fit rounded-md border border-border bg-popover p-2 shadow",
       "data-[state=open]:animate-in",
       "data-[state=open]:fade-in",
       "data-[state=closed]:animate-out",
@@ -28,9 +28,9 @@ export const datePicker = tv({
     trigger: "inline-flex items-center gap-2",
     viewControl: "inline-flex w-full items-center justify-between gap-2 py-2",
     table: "border-separate border-spacing-1",
-    tableHeader: "text-xs font-normal text-secondary",
+    tableHeader: "text-xs font-normal text-muted-foreground",
     tableCellTrigger: [
-      "relative inline-flex w-full items-center justify-center rounded px-2 py-1.5 text-xs font-normal",
+      "relative inline-flex w-full items-center justify-center rounded-md px-2 py-1.5 text-xs font-normal",
       "hover:bg-primary/20",
       "data-[in-range]:bg-primary/50",
       "data-[selected]:bg-primary",
@@ -47,62 +47,62 @@ export const datePicker = tv({
   },
   variants: {},
   defaultVariants: {},
-})
+});
 
-const { withRoot, withSlot } = createComponentFactory(datePicker)
+const { withRoot, withSlot } = createComponentFactory(datePicker);
 
-const Root = withRoot(BaseDatePicker.Root)
-const RootProvider = withRoot(BaseDatePicker.RootProvider)
-const ClearTrigger = withSlot(BaseDatePicker.ClearTrigger)
-const Content = withSlot(BaseDatePicker.Content, "content")
-const Context = withSlot(BaseDatePicker.Context)
-const Control = withSlot(BaseDatePicker.Control, "control")
-const Input = withSlot(BaseDatePicker.Input)
-const Label = withSlot(BaseDatePicker.Label)
-const MonthSelect = withSlot(BaseDatePicker.MonthSelect)
-const NextTrigger = withSlot(BaseDatePicker.NextTrigger)
-const Positioner = withSlot(BaseDatePicker.Positioner)
-const PresetTrigger = withSlot(BaseDatePicker.PresetTrigger)
-const PrevTrigger = withSlot(BaseDatePicker.PrevTrigger)
-const RangeText = withSlot(BaseDatePicker.RangeText)
-const Table = withSlot(BaseDatePicker.Table, "table")
-const TableBody = withSlot(BaseDatePicker.TableBody)
-const TableCell = withSlot(BaseDatePicker.TableCell)
+const Root = withRoot(BaseDatePicker.Root);
+const RootProvider = withRoot(BaseDatePicker.RootProvider);
+const ClearTrigger = withSlot(BaseDatePicker.ClearTrigger);
+const Content = withSlot(BaseDatePicker.Content, "content");
+const Context = withSlot(BaseDatePicker.Context);
+const Control = withSlot(BaseDatePicker.Control, "control");
+const Input = withSlot(BaseDatePicker.Input);
+const Label = withSlot(BaseDatePicker.Label);
+const MonthSelect = withSlot(BaseDatePicker.MonthSelect);
+const NextTrigger = withSlot(BaseDatePicker.NextTrigger);
+const Positioner = withSlot(BaseDatePicker.Positioner);
+const PresetTrigger = withSlot(BaseDatePicker.PresetTrigger);
+const PrevTrigger = withSlot(BaseDatePicker.PrevTrigger);
+const RangeText = withSlot(BaseDatePicker.RangeText);
+const Table = withSlot(BaseDatePicker.Table, "table");
+const TableBody = withSlot(BaseDatePicker.TableBody);
+const TableCell = withSlot(BaseDatePicker.TableCell);
 const TableCellTrigger = withSlot(
   BaseDatePicker.TableCellTrigger,
-  "tableCellTrigger",
-)
-const TableHead = withSlot(BaseDatePicker.TableHead)
-const TableHeader = withSlot(BaseDatePicker.TableHeader, "tableHeader")
-const TableRow = withSlot(BaseDatePicker.TableRow)
-const Trigger = withSlot(BaseDatePicker.Trigger, "trigger")
-const View = withSlot(BaseDatePicker.View)
-const ViewControl = withSlot(BaseDatePicker.ViewControl, "viewControl")
-const ViewTrigger = withSlot(BaseDatePicker.ViewTrigger)
-const YearSelect = withSlot(BaseDatePicker.YearSelect)
+  "tableCellTrigger"
+);
+const TableHead = withSlot(BaseDatePicker.TableHead);
+const TableHeader = withSlot(BaseDatePicker.TableHeader, "tableHeader");
+const TableRow = withSlot(BaseDatePicker.TableRow);
+const Trigger = withSlot(BaseDatePicker.Trigger, "trigger");
+const View = withSlot(BaseDatePicker.View);
+const ViewControl = withSlot(BaseDatePicker.ViewControl, "viewControl");
+const ViewTrigger = withSlot(BaseDatePicker.ViewTrigger);
+const YearSelect = withSlot(BaseDatePicker.YearSelect);
 
 export interface DatePickerCompactProps
   extends DatePickerRootProps,
     ComposedTVProps<typeof datePicker> {}
 
 export interface DatePicker extends ComponentMetadata {
-  (props: DatePickerCompactProps): React.ReactElement | null
+  (props: DatePickerCompactProps): React.ReactElement | null;
 }
 
 function _bootstrap(
   render: (
     props: DatePickerCompactProps,
-    ref: React.ForwardedRef<HTMLDivElement>,
-  ) => React.ReactElement | null,
+    ref: React.ForwardedRef<HTMLDivElement>
+  ) => React.ReactElement | null
 ) {
   return React.forwardRef<HTMLDivElement, DatePickerCompactProps>(
-    render,
-  ) as unknown as DatePicker
+    render
+  ) as unknown as DatePicker;
 }
 
 const CustomRoot = _bootstrap(function (
   { children, positioning, ...props },
-  ref,
+  ref
 ) {
   return (
     <Root
@@ -113,8 +113,8 @@ const CustomRoot = _bootstrap(function (
     >
       <Fragment>{children}</Fragment>
     </Root>
-  )
-})
+  );
+});
 
 const CustomContent = React.forwardRef<
   React.ElementRef<typeof Content>,
@@ -124,10 +124,10 @@ const CustomContent = React.forwardRef<
     <Positioner>
       <Content ref={ref} {...props} />
     </Positioner>
-  )
-})
+  );
+});
 
-CustomContent.displayName = "Content"
+CustomContent.displayName = "Content";
 
 const SimpleViews = React.forwardRef<
   React.ElementRef<typeof Content>,
@@ -138,7 +138,7 @@ const SimpleViews = React.forwardRef<
       {/* VIEW DAY */}
       <View view="day">
         <Context>
-          {datePicker => (
+          {(datePicker) => (
             <>
               <ViewControl>
                 <PrevTrigger asChild>
@@ -180,7 +180,7 @@ const SimpleViews = React.forwardRef<
       {/* VIEW MONTH */}
       <View view="month">
         <Context>
-          {datePicker => (
+          {(datePicker) => (
             <>
               <ViewControl>
                 <PrevTrigger asChild>
@@ -217,7 +217,7 @@ const SimpleViews = React.forwardRef<
       {/* VIEW YEAR */}
       <View view="year">
         <Context>
-          {datePicker => (
+          {(datePicker) => (
             <>
               <ViewControl>
                 <PrevTrigger asChild>
@@ -250,10 +250,10 @@ const SimpleViews = React.forwardRef<
         </Context>
       </View>
     </>
-  )
-})
+  );
+});
 
-SimpleViews.displayName = "SimpleViews"
+SimpleViews.displayName = "SimpleViews";
 
 export const DatePicker = createComponentTree(CustomRoot, {
   Root,
@@ -283,6 +283,6 @@ export const DatePicker = createComponentTree(CustomRoot, {
   ViewTrigger,
   YearSelect,
   SimpleViews,
-})
+});
 
-DatePicker.displayName = "DatePicker"
+DatePicker.displayName = "DatePicker";

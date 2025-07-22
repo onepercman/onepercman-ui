@@ -1,4 +1,5 @@
 import { dirname, join, resolve } from "path";
+
 import { mergeConfig } from "vite";
 
 function getAbsolutePath(value) {
@@ -21,7 +22,11 @@ const config = {
   core: {},
 
   async viteFinal(config, { configType }) {
+    // Dynamic import for ES module
+    const tailwindcss = (await import("@tailwindcss/vite")).default;
+
     return mergeConfig(config, {
+      plugins: [tailwindcss()],
       define: { "process.env": {} },
       resolve: {
         alias: [
@@ -31,11 +36,6 @@ const config = {
           },
         ],
         extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
-      },
-      css: {
-        postcss: {
-          plugins: [require("tailwindcss"), require("autoprefixer")],
-        },
       },
       optimizeDeps: {
         include: ["react", "react-dom"],

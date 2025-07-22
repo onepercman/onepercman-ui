@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { Checkbox as BaseCheckbox, CheckboxRootProps } from "@ark-ui/react"
-import React from "react"
-import { LuMinus } from "react-icons/lu"
+import { Checkbox as BaseCheckbox, CheckboxRootProps } from "@ark-ui/react";
+import React from "react";
+import { LuMinus } from "react-icons/lu";
 import {
   ComponentMetadata,
   ComposedTVProps,
   createComponentFactory,
   createComponentTree,
-} from "react-tvcx"
-import { tv } from "tailwind-variants"
-import { Check } from "./check"
+} from "react-tvcx";
+import { tv } from "tailwind-variants";
+import { Check } from "./check";
 
 export const checkbox = tv({
   base: "inline-flex cursor-pointer items-center gap-2",
   slots: {
     label: "",
     control: [
-      "flex rounded border-2 border-line text-primary transition-colors hover:border-primary",
+      "flex rounded-md border-2 border-border text-primary transition-colors hover:border-primary",
       "data-[state=checked]:border-primary",
     ],
     indicator: "m-auto",
@@ -46,39 +46,39 @@ export const checkbox = tv({
     variant: "outlined",
     color: "primary",
   },
-})
+});
 
-const { withRoot, withSlot } = createComponentFactory(checkbox)
+const { withRoot, withSlot } = createComponentFactory(checkbox);
 
-const Root = withRoot(BaseCheckbox.Root, "base")
-const RootProvider = withRoot(BaseCheckbox.RootProvider, "base")
-const Context = withSlot(BaseCheckbox.Context)
-const Control = withSlot(BaseCheckbox.Control, "control")
-const Group = withSlot(BaseCheckbox.Group)
-const HiddenInput = withSlot(BaseCheckbox.HiddenInput)
-const Indicator = withSlot(BaseCheckbox.Indicator, "indicator")
-const Label = withSlot(BaseCheckbox.Label, "label")
+const Root = withRoot(BaseCheckbox.Root, "base");
+const RootProvider = withRoot(BaseCheckbox.RootProvider, "base");
+const Context = withSlot(BaseCheckbox.Context);
+const Control = withSlot(BaseCheckbox.Control, "control");
+const Group = withSlot(BaseCheckbox.Group);
+const HiddenInput = withSlot(BaseCheckbox.HiddenInput);
+const Indicator = withSlot(BaseCheckbox.Indicator, "indicator");
+const Label = withSlot(BaseCheckbox.Label, "label");
 
 export interface CheckboxProps
   extends CheckboxRootProps,
     ComposedTVProps<typeof checkbox> {}
 
 export interface Checkbox extends ComponentMetadata {
-  (props: CheckboxProps): React.ReactElement | null
+  (props: CheckboxProps): React.ReactElement | null;
 }
 
 function _bootstrap(
   render: (
     props: CheckboxProps,
-    ref: React.ForwardedRef<HTMLLabelElement>,
-  ) => React.ReactElement | null,
+    ref: React.ForwardedRef<HTMLLabelElement>
+  ) => React.ReactElement | null
 ) {
-  return React.forwardRef<HTMLLabelElement, CheckboxProps>(render) as Checkbox
+  return React.forwardRef<HTMLLabelElement, CheckboxProps>(render) as Checkbox;
 }
 
 export const CheckboxCustomRoot = _bootstrap(function (
   { children, ...props },
-  ref,
+  ref
 ) {
   return (
     <Root ref={ref} {...props}>
@@ -102,8 +102,8 @@ export const CheckboxCustomRoot = _bootstrap(function (
         )}
       </Context>
     </Root>
-  )
-})
+  );
+});
 
 export const Checkbox = createComponentTree(CheckboxCustomRoot, {
   Root,
@@ -114,6 +114,6 @@ export const Checkbox = createComponentTree(CheckboxCustomRoot, {
   HiddenInput,
   Indicator,
   Label,
-})
+});
 
-Checkbox.displayName = "Checkbox"
+Checkbox.displayName = "Checkbox";

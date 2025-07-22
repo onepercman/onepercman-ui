@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import React from "react"
-import { LuX } from "react-icons/lu"
+import React from "react";
+import { LuX } from "react-icons/lu";
 import TextAreaAutoSize, {
   TextareaAutosizeProps,
-} from "react-textarea-autosize"
-import { cn, ComposedTVProps, forwardRef } from "react-tvcx"
-import { tv } from "tailwind-variants"
-import { useComposedRefs } from "use-composed-refs"
+} from "react-textarea-autosize";
+import { cn, ComposedTVProps, forwardRef } from "react-tvcx";
+import { tv } from "tailwind-variants";
+import { useComposedRefs } from "use-composed-refs";
 
 export const textarea = tv({
   base: [
-    "inline-flex cursor-text items-center gap-2 overflow-hidden text-ellipsis rounded border-2 px-2 py-2 transition-all",
+    "inline-flex cursor-text items-center gap-2 overflow-hidden text-ellipsis rounded-md border-2 px-2 py-2 transition-all",
     "focus-within:border-primary",
   ],
   slots: {
@@ -30,12 +30,12 @@ export const textarea = tv({
       lg: "min-h-[3rem] min-w-[3rem] px-4",
     },
     variant: {
-      filled: "border-transparent bg-default",
-      outlined: "border-2 border-line",
+      filled: "border-transparent bg-component",
+      outlined: "border-2 border-border",
     },
     invalid: {
       true: {
-        base: "border-2 border-error bg-error/10 text-error focus-within:border-error-600",
+        base: "border-2 border-error bg-error-subtle text-error focus-within:border-error-focus",
         label: "text-error",
       },
     },
@@ -47,18 +47,18 @@ export const textarea = tv({
     size: "md",
     variant: "filled",
   },
-})
+});
 
 export interface TextareaProps<AutoSize extends boolean = true>
   extends ComposedTVProps<typeof textarea> {
-  autoSize?: AutoSize
-  prefix?: React.ReactNode | React.ReactElement
-  suffix?: React.ReactNode | React.ReactElement
-  addonBefore?: React.ReactNode | React.ReactElement
-  addonAfter?: React.ReactNode | React.ReactElement
-  clearable?: boolean
-  transform?(value: string): string
-  autoSizeOptions?: AutoSize extends true ? TextareaAutosizeProps : undefined
+  autoSize?: AutoSize;
+  prefix?: React.ReactNode | React.ReactElement;
+  suffix?: React.ReactNode | React.ReactElement;
+  addonBefore?: React.ReactNode | React.ReactElement;
+  addonAfter?: React.ReactNode | React.ReactElement;
+  clearable?: boolean;
+  transform?(value: string): string;
+  autoSizeOptions?: AutoSize extends true ? TextareaAutosizeProps : undefined;
 }
 
 export const Textarea = forwardRef<"textarea", TextareaProps>(
@@ -81,14 +81,14 @@ export const Textarea = forwardRef<"textarea", TextareaProps>(
       classNames,
       ...props
     },
-    ref,
+    ref
   ) => {
-    const styles = textarea({ variant, size, invalid, className })
+    const styles = textarea({ variant, size, invalid, className });
 
-    const internalRef = React.useRef<HTMLTextAreaElement>(null)
-    const composedRef = useComposedRefs(ref, internalRef)
+    const internalRef = React.useRef<HTMLTextAreaElement>(null);
+    const composedRef = useComposedRefs(ref, internalRef);
 
-    const [showClear, setShowClear] = React.useState(false)
+    const [showClear, setShowClear] = React.useState(false);
 
     function getClear() {
       if (showClear && clearable) {
@@ -97,83 +97,83 @@ export const Textarea = forwardRef<"textarea", TextareaProps>(
             className="cursor-pointer text-secondary"
             onClick={function () {
               if (internalRef.current) {
-                setShowClear(false)
-                internalRef.current.value = ""
-                const currentTarget = internalRef.current.cloneNode(true)
+                setShowClear(false);
+                internalRef.current.value = "";
+                const currentTarget = internalRef.current.cloneNode(true);
                 const event = Object.create(new Event("change"), {
                   target: { value: currentTarget },
                   currentTarget: { value: currentTarget },
-                })
-                if (onChange) onChange(event)
+                });
+                if (onChange) onChange(event);
               }
             }}
           />
-        )
+        );
       }
     }
 
     function handleChange(ev: React.ChangeEvent<HTMLTextAreaElement>) {
       if (transform && internalRef.current) {
-        internalRef.current.value = transform(internalRef.current.value)
+        internalRef.current.value = transform(internalRef.current.value);
       }
-      if (onChange) onChange(ev)
-      setShowClear(!!ev.target.value)
+      if (onChange) onChange(ev);
+      setShowClear(!!ev.target.value);
     }
 
     function _renderPrefix() {
-      const element = prefix as React.ReactElement
-      if (!element) return null
+      const element = prefix as React.ReactElement;
+      if (!element) return null;
 
       if (typeof element === "object" && "type" in element)
-        return React.cloneElement(element)
-      return <span>{element}</span>
+        return React.cloneElement(element);
+      return <span>{element}</span>;
     }
 
     function _renderSuffix() {
-      const element = suffix as React.ReactElement
-      if (!element) return null
+      const element = suffix as React.ReactElement;
+      if (!element) return null;
       if (typeof element === "object" && "type" in element)
-        return React.cloneElement(element)
-      return <span>{element}</span>
+        return React.cloneElement(element);
+      return <span>{element}</span>;
     }
 
     function _renderAddonBefore() {
-      const element = addonBefore as React.ReactElement
-      if (!element) return null
+      const element = addonBefore as React.ReactElement;
+      if (!element) return null;
       if (typeof element === "object" && "type" in element)
         return React.cloneElement(element, {
           className: styles.addonBefore({
             className: element.props.className,
             class: classNames?.addonBefore,
           }),
-        })
+        });
       return (
         <span
           className={styles.addonBefore({ class: classNames?.addonBefore })}
         >
           {element}
         </span>
-      )
+      );
     }
 
     function _renderAddonAfter() {
-      const element = addonAfter as React.ReactElement
-      if (!element) return null
+      const element = addonAfter as React.ReactElement;
+      if (!element) return null;
       if (typeof element === "object" && "type" in element)
         return React.cloneElement(element, {
           className: styles.addonAfter({
             className: element.props.className,
             class: classNames?.addonAfter,
           }),
-        })
+        });
       return (
         <span className={styles.addonAfter({ class: classNames?.addonAfter })}>
           {element}
         </span>
-      )
+      );
     }
 
-    const Component = autoSize ? TextAreaAutoSize : (Comp as any)
+    const Component = autoSize ? TextAreaAutoSize : (Comp as any);
 
     return (
       <label
@@ -201,8 +201,8 @@ export const Textarea = forwardRef<"textarea", TextareaProps>(
         {_renderSuffix()}
         {_renderAddonAfter()}
       </label>
-    )
-  },
-)
+    );
+  }
+);
 
-Textarea.displayName = "Textarea"
+Textarea.displayName = "Textarea";

@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { styled } from "react-tvcx"
-import { tv } from "tailwind-variants"
+import { styled } from "react-tvcx";
+import { tv } from "tailwind-variants";
 
 export const kbd = tv({
   base: [
-    "inline-flex items-center gap-1 rounded border border-line bg-component text-center font-medium shadow-[0_1px_0_white]",
+    "inline-flex items-center gap-1 rounded-md border border-border bg-component text-center font-medium shadow-sm",
     "min-h-[var(--badge-size)] min-w-[var(--badge-size)]",
   ],
   variants: {
@@ -20,10 +20,10 @@ export const kbd = tv({
     size: "sm",
     color: "default",
   },
-})
+});
 
-export const Kbd = styled("span", kbd)
+export const Kbd = styled("span", kbd);
 
-Kbd.displayName = "Kbd"
+Kbd.displayName = "Kbd";
 
-export default Kbd
+export default Kbd;

@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { Field as BaseField } from "@ark-ui/react"
+import { Field as BaseField } from "@ark-ui/react";
 import {
   ComponentMetadata,
   ComposedTVProps,
   createComponentFactory,
   createComponentTree,
-} from "react-tvcx"
-import { tv } from "tailwind-variants"
+} from "react-tvcx";
+import { tv } from "tailwind-variants";
 
 export const field = tv({
   base: "flex flex-col gap-2",
   slots: {
     label: "font-medium",
     errorText: "text-xs text-error",
-    helperText: "",
+    helperText: "text-xs text-muted-foreground",
   },
   variants: {
     size: {
@@ -37,24 +37,24 @@ export const field = tv({
   defaultVariants: {
     size: "md",
   },
-})
+});
 
-const { withRoot, withSlot } = createComponentFactory(field)
+const { withRoot, withSlot } = createComponentFactory(field);
 
-const Context = withSlot(BaseField.Context)
-const ErrorText = withSlot(BaseField.ErrorText, "errorText")
-const HelperText = withSlot(BaseField.HelperText, "helperText")
-const Input = withSlot(BaseField.Input)
-const Label = withSlot(BaseField.Label, "label")
-const Root = withRoot(BaseField.Root, "base")
-const RootProvider = withSlot(BaseField.RootProvider)
-const Select = withSlot(BaseField.Select)
-const Textarea = withSlot(BaseField.Textarea)
+const Context = withSlot(BaseField.Context);
+const ErrorText = withSlot(BaseField.ErrorText, "errorText");
+const HelperText = withSlot(BaseField.HelperText, "helperText");
+const Input = withSlot(BaseField.Input);
+const Label = withSlot(BaseField.Label, "label");
+const Root = withRoot(BaseField.Root, "base");
+const RootProvider = withSlot(BaseField.RootProvider);
+const Select = withSlot(BaseField.Select);
+const Textarea = withSlot(BaseField.Textarea);
 
 export interface FieldProps extends ComposedTVProps<typeof field> {}
 
 export interface Field extends ComponentMetadata {
-  (props: FieldProps): React.ReactElement | null
+  (props: FieldProps): React.ReactElement | null;
 }
 
 export const Field = createComponentTree(Root, {
@@ -67,8 +67,8 @@ export const Field = createComponentTree(Root, {
   RootProvider,
   Select,
   Textarea,
-})
+});
 
-Field.displayName = "Field"
+Field.displayName = "Field";
 
-export default Field
+export default Field;

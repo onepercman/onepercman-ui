@@ -1,22 +1,26 @@
-"use client"
+"use client";
 
-import React from "react"
-import ReactDOM from "react-dom/client"
-import { LuX } from "react-icons/lu"
-import { createComponentFactory, createComponentTree } from "react-tvcx"
-import { tv } from "tailwind-variants"
-import { Drawer } from "vaul"
-import { Button } from "./button"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { LuX } from "react-icons/lu";
+import {
+  ComponentMetadata,
+  createComponentFactory,
+  createComponentTree,
+} from "react-tvcx";
+import { tv } from "tailwind-variants";
+import { Drawer } from "vaul";
+import { Button } from "./button";
 
-export type DrawerProps = React.ComponentPropsWithoutRef<typeof Drawer.Root>
+export type DrawerProps = React.ComponentPropsWithoutRef<typeof Drawer.Root>;
 
 export const drawer = tv({
   slots: {
     overlay: "fixed inset-0 bg-background/50 backdrop-blur",
     handle: "bg-foreground/50",
-    closeTrigger: "absolute right-4 top-4 text-secondary",
+    closeTrigger: "absolute right-4 top-4 text-muted-foreground",
     content: [
-      "fixed rounded bg-component p-4",
+      "fixed rounded-md bg-popover p-4",
       "min-w-52 [&[vaul-drawer-direction=left]]:left-0",
       "[&[vaul-drawer-direction=left]]:top-0",
       "[&[vaul-drawer-direction=left]]:bottom-0",
@@ -31,22 +35,22 @@ export const drawer = tv({
       "[&[vaul-drawer-direction=top]]:right-0",
     ],
     title: "py-2 text-sm font-medium",
-    description: "text-sm text-secondary",
+    description: "text-sm text-muted-foreground",
   },
-})
+});
 
-const { withRoot, withSlot } = createComponentFactory(drawer)
+const { withRoot, withSlot } = createComponentFactory(drawer);
 
-const Root = withRoot(Drawer.Root)
-const NestedRoot = withSlot(Drawer.NestedRoot)
-const Description = withSlot(Drawer.Description, "description")
-const Handle = withSlot(Drawer.Handle, "handle")
-const Overlay = withSlot(Drawer.Overlay, "overlay")
-const Portal = withSlot(Drawer.Portal)
-const Title = withSlot(Drawer.Title, "title")
-const Trigger = withSlot(Drawer.Trigger)
-const Content = withSlot(Drawer.Content, "content")
-const CloseTrigger = withSlot(Drawer.Close, "closeTrigger")
+const Root = withRoot(Drawer.Root);
+const NestedRoot = withSlot(Drawer.NestedRoot);
+const Description = withSlot(Drawer.Description, "description");
+const Handle = withSlot(Drawer.Handle, "handle");
+const Overlay = withSlot(Drawer.Overlay, "overlay");
+const Portal = withSlot(Drawer.Portal);
+const Title = withSlot(Drawer.Title, "title");
+const Trigger = withSlot(Drawer.Trigger);
+const Content = withSlot(Drawer.Content, "content");
+const CloseTrigger = withSlot(Drawer.Close, "closeTrigger");
 
 const CustomContent = React.forwardRef<
   React.ElementRef<typeof Content>,
@@ -61,10 +65,10 @@ const CustomContent = React.forwardRef<
         </Content>
       </Portal>
     </Portal>
-  )
-})
+  );
+});
 
-CustomContent.displayName = "Content"
+CustomContent.displayName = "Content";
 
 const CustomCloseTrigger = React.forwardRef<
   React.ElementRef<typeof CloseTrigger>,
@@ -74,12 +78,12 @@ const CustomCloseTrigger = React.forwardRef<
     <CloseTrigger ref={ref} {...props}>
       {children || <LuX className="h-4 w-4" />}
     </CloseTrigger>
-  )
-})
+  );
+});
 
-CustomCloseTrigger.displayName = "CloseTrigger"
+CustomCloseTrigger.displayName = "CloseTrigger";
 
-export const Component = createComponentTree(Root, {
+export const Component: ComponentMetadata = createComponentTree(Root, {
   Root,
   NestedRoot,
   Description,
@@ -93,37 +97,37 @@ export const Component = createComponentTree(Root, {
   open,
   confirm,
   dismiss,
-})
+});
 
-Component.displayName = "Drawer"
+Component.displayName = "Drawer";
 
 function open({ children, onClose, ...props }: DrawerProps): {
-  close: () => void
+  close: () => void;
 } {
-  const root = ReactDOM.createRoot(document.createElement("div"))
+  const root = ReactDOM.createRoot(document.createElement("div"));
 
   function close() {
     root.render(
       <Drawer.Root open={false} {...props}>
         <Drawer.Content>{children}</Drawer.Content>
-      </Drawer.Root>,
-    )
+      </Drawer.Root>
+    );
   }
 
   root.render(
     <Drawer.Root
       open={true}
       onClose={function () {
-        close()
-        onClose?.()
+        close();
+        onClose?.();
       }}
       {...props}
     >
       <Drawer.Content>{children}</Drawer.Content>
-    </Drawer.Root>,
-  )
+    </Drawer.Root>
+  );
 
-  return { close }
+  return { close };
 }
 
 function confirm({
@@ -132,27 +136,27 @@ function confirm({
   onCancel,
   ...props
 }: DrawerProps & {
-  onConfirm?: () => void
-  onCancel?: () => void
+  onConfirm?: () => void;
+  onCancel?: () => void;
 }): {
-  close: () => void
+  close: () => void;
 } {
-  const root = ReactDOM.createRoot(document.createElement("div"))
+  const root = ReactDOM.createRoot(document.createElement("div"));
 
   function close() {
     root.render(
       <Drawer.Root open={false} {...props}>
         <Drawer.Content>{children}</Drawer.Content>
-      </Drawer.Root>,
-    )
+      </Drawer.Root>
+    );
   }
 
   root.render(
     <Drawer.Root
       open={true}
       onClose={function () {
-        close()
-        onCancel?.()
+        close();
+        onCancel?.();
       }}
       {...props}
     >
@@ -162,30 +166,30 @@ function confirm({
           <Button
             variant="outlined"
             onClick={function () {
-              close()
-              onCancel?.()
+              close();
+              onCancel?.();
             }}
           >
             Cancel
           </Button>
           <Button
             onClick={function () {
-              close()
-              onConfirm?.()
+              close();
+              onConfirm?.();
             }}
           >
             Confirm
           </Button>
         </div>
       </Drawer.Content>
-    </Drawer.Root>,
-  )
+    </Drawer.Root>
+  );
 
-  return { close }
+  return { close };
 }
 
 function dismiss(id: string) {
-  document.querySelectorAll(`[data-dismiss=${id}]`).forEach(el => {
-    return (el as HTMLElement).click()
-  })
+  document.querySelectorAll(`[data-dismiss=${id}]`).forEach((el) => {
+    return (el as HTMLElement).click();
+  });
 }

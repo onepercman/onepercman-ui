@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import React from "react"
-import { cn, ComposedTVProps, forwardRef } from "react-tvcx"
-import { tv } from "tailwind-variants"
-import { Spinner } from "./spinner"
+import React from "react";
+import { cn, ComposedTVProps, forwardRef } from "react-tvcx";
+import { tv } from "tailwind-variants";
+import { Spinner } from "./spinner";
 
 export const button = tv({
   base: [
@@ -36,10 +36,10 @@ export const button = tv({
       error: "",
     },
     shape: {
-      normal: "rounded",
+      normal: "rounded-md",
       pill: "rounded-full",
       circle: "aspect-square rounded-full p-0",
-      square: "aspect-square rounded p-0",
+      square: "aspect-square rounded-md p-0",
     },
   },
   compoundVariants: [
@@ -47,7 +47,7 @@ export const button = tv({
     {
       variant: "default",
       color: "default",
-      class: ["bg-default"],
+      class: ["bg-component"],
     },
     {
       variant: "default",
@@ -55,7 +55,7 @@ export const button = tv({
       class: [
         "bg-primary",
         "text-primary-foreground",
-        "[&:not(:disabled)]:hover:bg-primary-600",
+        "[&:not(:disabled)]:hover:bg-primary-focus",
       ],
     },
     {
@@ -63,8 +63,8 @@ export const button = tv({
       color: "info",
       class: [
         "bg-info",
-        "text-success-info",
-        "[&:not(:disabled)]:hover:bg-info-600",
+        "text-info-foreground",
+        "[&:not(:disabled)]:hover:bg-info-focus",
       ],
     },
     {
@@ -73,7 +73,7 @@ export const button = tv({
       class: [
         "bg-success",
         "text-success-foreground",
-        "[&:not(:disabled)]:hover:bg-success-600",
+        "[&:not(:disabled)]:hover:bg-success-focus",
       ],
     },
     {
@@ -82,7 +82,7 @@ export const button = tv({
       class: [
         "bg-warning",
         "text-warning-foreground",
-        "[&:not(:disabled)]:hover:bg-warning-600",
+        "[&:not(:disabled)]:hover:bg-warning-focus",
       ],
     },
     {
@@ -91,7 +91,7 @@ export const button = tv({
       class: [
         "bg-error",
         "text-error-foreground",
-        "[&:not(:disabled)]:hover:bg-error-600",
+        "[&:not(:disabled)]:hover:bg-error-focus",
       ],
     },
     {
@@ -100,7 +100,7 @@ export const button = tv({
       class: [
         "bg-accent",
         "text-accent-foreground",
-        "[&:not(:disabled)]:hover:bg-accent-600",
+        "[&:not(:disabled)]:hover:bg-accent-focus",
       ],
     },
     // light
@@ -108,16 +108,16 @@ export const button = tv({
       variant: "light",
       color: "default",
       class: [
-        "bg-default/20",
+        "bg-component/20",
         "text-foreground",
-        "[&:not(:disabled)]:hover:bg-default/50",
+        "[&:not(:disabled)]:hover:bg-component/50",
       ],
     },
     {
       variant: "light",
       color: "primary",
       class: [
-        "bg-primary/20",
+        "bg-primary-muted",
         "text-primary",
         "[&:not(:disabled)]:hover:bg-primary/50",
       ],
@@ -125,13 +125,17 @@ export const button = tv({
     {
       variant: "light",
       color: "info",
-      class: ["bg-info/20", "text-info", "[&:not(:disabled)]:hover:bg-info/50"],
+      class: [
+        "bg-info-muted",
+        "text-info",
+        "[&:not(:disabled)]:hover:bg-info/50",
+      ],
     },
     {
       variant: "light",
       color: "success",
       class: [
-        "bg-success/20",
+        "bg-success-muted",
         "text-success",
         "[&:not(:disabled)]:hover:bg-success/50",
       ],
@@ -140,7 +144,7 @@ export const button = tv({
       variant: "light",
       color: "warning",
       class: [
-        "bg-warning/20",
+        "bg-warning-muted",
         "text-warning",
         "[&:not(:disabled)]:hover:bg-warning/50",
       ],
@@ -149,7 +153,7 @@ export const button = tv({
       variant: "light",
       color: "error",
       class: [
-        "bg-error/20",
+        "bg-error-muted",
         "text-error",
         "[&:not(:disabled)]:hover:bg-error/50",
       ],
@@ -158,8 +162,8 @@ export const button = tv({
       variant: "light",
       color: "accent",
       class: [
-        "bg-accent/20",
-        "accent-error",
+        "bg-accent-muted",
+        "text-accent",
         "[&:not(:disabled)]:hover:bg-accent/50",
       ],
     },
@@ -167,14 +171,14 @@ export const button = tv({
     {
       variant: "outlined",
       color: "default",
-      class: ["border-line", "[&:not(:disabled)]:hover:bg-default-600"],
+      class: ["border-border", "[&:not(:disabled)]:hover:bg-component"],
     },
     {
       variant: "outlined",
       color: "primary",
       class: [
         "border-primary text-primary",
-        "[&:not(:disabled)]:hover:border-primary-600 [&:not(:disabled)]:hover:text-primary-600",
+        "[&:not(:disabled)]:hover:border-primary-focus [&:not(:disabled)]:hover:text-primary-focus",
       ],
     },
     {
@@ -182,7 +186,7 @@ export const button = tv({
       color: "info",
       class: [
         "border-info text-info",
-        "[&:not(:disabled)]:hover:border-info-600 [&:not(:disabled)]:hover:text-info-600",
+        "[&:not(:disabled)]:hover:border-info-focus [&:not(:disabled)]:hover:text-info-focus",
       ],
     },
     {
@@ -190,7 +194,7 @@ export const button = tv({
       color: "success",
       class: [
         "border-success text-success",
-        "[&:not(:disabled)]:hover:border-success-600 [&:not(:disabled)]:hover:text-success-600",
+        "[&:not(:disabled)]:hover:border-success-focus [&:not(:disabled)]:hover:text-success-focus",
       ],
     },
     {
@@ -198,7 +202,7 @@ export const button = tv({
       color: "warning",
       class: [
         "border-warning text-warning",
-        "[&:not(:disabled)]:hover:border-warning-600 [&:not(:disabled)]:hover:text-warning-600",
+        "[&:not(:disabled)]:hover:border-warning-focus [&:not(:disabled)]:hover:text-warning-focus",
       ],
     },
     {
@@ -206,7 +210,7 @@ export const button = tv({
       color: "error",
       class: [
         "border-error text-error",
-        "[&:not(:disabled)]:hover:border-error-600 [&:not(:disabled)]:hover:text-error-600",
+        "[&:not(:disabled)]:hover:border-error-focus [&:not(:disabled)]:hover:text-error-focus",
       ],
     },
     {
@@ -214,44 +218,44 @@ export const button = tv({
       color: "accent",
       class: [
         "border-accent text-accent",
-        "[&:not(:disabled)]:hover:border-accent-600 [&:not(:disabled)]:hover:text-accent-600",
+        "[&:not(:disabled)]:hover:border-accent-focus [&:not(:disabled)]:hover:text-accent-focus",
       ],
     },
     // ghost
     {
       variant: "ghost",
       color: "default",
-      class: ["text-foreground", "[&:not(:disabled)]:hover:bg-default"],
+      class: ["text-foreground", "[&:not(:disabled)]:hover:bg-component"],
     },
     {
       variant: "ghost",
       color: "primary",
-      class: ["text-primary", "[&:not(:disabled)]:hover:bg-primary/10"],
+      class: ["text-primary", "[&:not(:disabled)]:hover:bg-primary-subtle"],
     },
     {
       variant: "ghost",
       color: "info",
-      class: ["text-info", "[&:not(:disabled)]:hover:bg-info/10"],
+      class: ["text-info", "[&:not(:disabled)]:hover:bg-info-subtle"],
     },
     {
       variant: "ghost",
       color: "success",
-      class: ["text-success", "[&:not(:disabled)]:hover:bg-success/10"],
+      class: ["text-success", "[&:not(:disabled)]:hover:bg-success-subtle"],
     },
     {
       variant: "ghost",
       color: "warning",
-      class: ["text-warning", "[&:not(:disabled)]:hover:bg-warning/10"],
+      class: ["text-warning", "[&:not(:disabled)]:hover:bg-warning-subtle"],
     },
     {
       variant: "ghost",
       color: "error",
-      class: ["text-error", "[&:not(:disabled)]:hover:bg-error/10"],
+      class: ["text-error", "[&:not(:disabled)]:hover:bg-error-subtle"],
     },
     {
       variant: "ghost",
       color: "accent",
-      class: ["text-accent", "[&:not(:disabled)]:hover:bg-accent/10"],
+      class: ["text-accent", "[&:not(:disabled)]:hover:bg-accent-subtle"],
     },
   ],
   defaultVariants: {
@@ -260,14 +264,14 @@ export const button = tv({
     color: "default",
     shape: "normal",
   },
-})
+});
 
 export interface ButtonBaseProps {
-  loading?: boolean
-  loadingText?: string
-  leftIcon?: React.ReactElement | React.ReactNode
-  rightIcon?: React.ReactElement | React.ReactNode
-  loadingVariant?: "default" | "transparent"
+  loading?: boolean;
+  loadingText?: string;
+  leftIcon?: React.ReactElement | React.ReactNode;
+  rightIcon?: React.ReactElement | React.ReactNode;
+  loadingVariant?: "default" | "transparent";
 }
 
 export interface ButtonProps
@@ -280,28 +284,28 @@ function useButton({
   disabled,
   ...props
 }: ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>) {
-  const className = button(props)
+  const className = button(props);
 
-  const [asyncLoading, setAsyncLoading] = React.useState(false)
+  const [asyncLoading, setAsyncLoading] = React.useState(false);
 
   async function handleClick(ev: React.MouseEvent<HTMLButtonElement>) {
-    if (!onClick) return
+    if (!onClick) return;
 
     if (onClick.constructor.name === "AsyncFunction") {
       try {
-        setAsyncLoading(true)
-        await onClick(ev)
+        setAsyncLoading(true);
+        await onClick(ev);
       } catch (err) {
-        throw new Error(err as any)
+        throw new Error(err as any);
       } finally {
-        setAsyncLoading(false)
+        setAsyncLoading(false);
       }
     } else {
-      onClick(ev)
+      onClick(ev);
     }
   }
 
-  const _loading = Boolean(asyncLoading || loading)
+  const _loading = Boolean(asyncLoading || loading);
 
   return {
     ...props,
@@ -309,7 +313,7 @@ function useButton({
     onClick: handleClick,
     loading: _loading,
     disabled: _loading || disabled,
-  }
+  };
 }
 
 export const Button = forwardRef<"button", ButtonProps>(function (
@@ -322,9 +326,9 @@ export const Button = forwardRef<"button", ButtonProps>(function (
     rightIcon,
     ...props
   },
-  ref,
+  ref
 ) {
-  const buttonProps = useButton(props)
+  const buttonProps = useButton(props);
 
   return (
     <Component
@@ -372,7 +376,7 @@ export const Button = forwardRef<"button", ButtonProps>(function (
         )
       ) : null}
     </Component>
-  )
-})
+  );
+});
 
-Button.displayName = "Button"
+Button.displayName = "Button";

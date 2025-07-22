@@ -1,23 +1,24 @@
-"use client"
+"use client";
 
-import React from "react"
+import React from "react";
 import {
   ComponentMetadata,
   ComposedTVProps,
   createComponentFactory,
   createComponentTree,
-} from "react-tvcx"
-import { tv } from "tailwind-variants"
+} from "react-tvcx";
+import { tv } from "tailwind-variants";
 
 export const table = tv({
-  base: "overflow-auto rounded text-xs",
+  base: "overflow-auto rounded-md text-xs",
   slots: {
     table: "w-full border-separate border-spacing-y-1",
     head: "",
     body: "relative",
-    column: "bg-default px-4 py-2 font-semibold first:rounded-l last:rounded-r",
+    column:
+      "bg-component px-4 py-2 font-semibold first:rounded-l-md last:rounded-r-md",
     row: "group",
-    cell: "bg-component px-4 py-2 font-normal first:rounded-l last:rounded-r",
+    cell: "bg-card px-4 py-2 font-normal first:rounded-l-md last:rounded-r-md",
   },
   variants: {
     size: {
@@ -39,24 +40,24 @@ export const table = tv({
     },
     highlightRow: {
       true: {
-        cell: "cursor-pointer transition-colors group-hover:bg-default",
+        cell: "cursor-pointer transition-colors group-hover:bg-component/80",
       },
     },
   },
   defaultVariants: {
     size: "md",
   },
-})
+});
 
-const { withRoot, withSlot } = createComponentFactory(table)
+const { withRoot, withSlot } = createComponentFactory(table);
 
-const Root = withRoot("div", "base")
-const TableElement = withSlot("table", "table")
-const Head = withSlot("thead", "head")
-const Body = withSlot("tbody", "body")
-const Column = withSlot("th", "column")
-const Row = withSlot("tr", "row")
-const Cell = withSlot("td", "cell")
+const Root = withRoot("div", "base");
+const TableElement = withSlot("table", "table");
+const Head = withSlot("thead", "head");
+const Body = withSlot("tbody", "body");
+const Column = withSlot("th", "column");
+const Row = withSlot("tr", "row");
+const Cell = withSlot("td", "cell");
 
 export const Wrapper = React.forwardRef<
   React.ElementRef<typeof TableElement>,
@@ -64,7 +65,7 @@ export const Wrapper = React.forwardRef<
     React.ComponentPropsWithoutRef<typeof Root>
 >(function (
   { size, highlightRow, className, classNames, children, ...props },
-  ref,
+  ref
 ) {
   return (
     <Root
@@ -77,10 +78,10 @@ export const Wrapper = React.forwardRef<
         {children}
       </TableElement>
     </Root>
-  )
-})
+  );
+});
 
-Wrapper.displayName = "TableWrapper"
+Wrapper.displayName = "TableWrapper";
 
 export const Header = React.forwardRef<
   React.ElementRef<typeof Head>,
@@ -90,15 +91,15 @@ export const Header = React.forwardRef<
     <Head ref={ref} {...props}>
       <Row>{children}</Row>
     </Head>
-  )
-})
+  );
+});
 
-Header.displayName = "TableHeader"
+Header.displayName = "TableHeader";
 
 export interface TableProps extends ComposedTVProps<typeof table> {}
 
 export interface TableComponent extends ComponentMetadata {
-  (props: TableProps): React.ReactElement | null
+  (props: TableProps): React.ReactElement | null;
 }
 
 export const Table = createComponentTree(Wrapper, {
@@ -110,6 +111,6 @@ export const Table = createComponentTree(Wrapper, {
   Column,
   Row,
   Cell,
-})
+});
 
-Table.displayName = "Table"
+Table.displayName = "Table";

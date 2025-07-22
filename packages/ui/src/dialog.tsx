@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { Dialog as BaseDialog, DialogRootProps } from "@ark-ui/react"
-import React from "react"
-import ReactDOM from "react-dom/client"
-import { LuX } from "react-icons/lu"
+import { Dialog as BaseDialog, DialogRootProps } from "@ark-ui/react";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { LuX } from "react-icons/lu";
 import {
   ComponentMetadata,
   ComposedTVProps,
   createComponentFactory,
   createComponentTree,
-} from "react-tvcx"
-import { tv } from "tailwind-variants"
-import { Button } from "./button"
+} from "react-tvcx";
+import { tv } from "tailwind-variants";
+import { Button } from "./button";
 
 export const dialog = tv({
   slots: {
@@ -24,7 +24,7 @@ export const dialog = tv({
     ],
     positioner: "fixed inset-0 flex overflow-auto p-4",
     content: [
-      "relative h-fit w-fit rounded border border-line bg-component p-4 shadow",
+      "relative h-fit w-fit rounded-lg border border-border bg-popover p-4 shadow",
       "data-[state=open]:animate-in",
       "data-[state=open]:fade-in",
       "data-[state=closed]:animate-out",
@@ -55,20 +55,20 @@ export const dialog = tv({
     size: "sm",
     placement: "topCenter",
   },
-})
+});
 
-const { withRoot, withSlot } = createComponentFactory(dialog)
+const { withRoot, withSlot } = createComponentFactory(dialog);
 
-const Root = withRoot(BaseDialog.Root)
-const RootProvider = withSlot(BaseDialog.RootProvider)
-const Backdrop = withSlot(BaseDialog.Backdrop, "backdrop")
-const Context = withSlot(BaseDialog.Context)
-const Description = withSlot(BaseDialog.Description, "description")
-const Positioner = withSlot(BaseDialog.Positioner, "positioner")
-const Title = withSlot(BaseDialog.Title, "title")
-const Trigger = withSlot(BaseDialog.Trigger)
-const Content = withSlot(BaseDialog.Content, "content")
-const CloseTrigger = withSlot(BaseDialog.CloseTrigger, "closeTrigger")
+const Root = withRoot(BaseDialog.Root);
+const RootProvider = withSlot(BaseDialog.RootProvider);
+const Backdrop = withSlot(BaseDialog.Backdrop, "backdrop");
+const Context = withSlot(BaseDialog.Context);
+const Description = withSlot(BaseDialog.Description, "description");
+const Positioner = withSlot(BaseDialog.Positioner, "positioner");
+const Title = withSlot(BaseDialog.Title, "title");
+const Trigger = withSlot(BaseDialog.Trigger);
+const Content = withSlot(BaseDialog.Content, "content");
+const CloseTrigger = withSlot(BaseDialog.CloseTrigger, "closeTrigger");
 
 const CustomContent = React.forwardRef<
   React.ElementRef<typeof Content>,
@@ -83,10 +83,10 @@ const CustomContent = React.forwardRef<
         </Content>
       </Positioner>
     </>
-  )
-})
+  );
+});
 
-CustomContent.displayName = "Content"
+CustomContent.displayName = "Content";
 
 const CustomCloseTrigger = React.forwardRef<
   React.ElementRef<typeof CloseTrigger>,
@@ -96,24 +96,24 @@ const CustomCloseTrigger = React.forwardRef<
     <CloseTrigger ref={ref} asChild {...props}>
       <LuX role="button" className="text-secondary" />
     </CloseTrigger>
-  )
-})
+  );
+});
 
-CustomCloseTrigger.displayName = "CloseTrigger"
+CustomCloseTrigger.displayName = "CloseTrigger";
 
 function open({ children, onOpenChange, ...props }: DialogRootProps): {
-  close(): void
+  close(): void;
 } {
-  const container = document.createDocumentFragment()
+  const container = document.createDocumentFragment();
 
-  const root = ReactDOM.createRoot(container)
+  const root = ReactDOM.createRoot(container);
 
   function close() {
     root.render(
       <Root open={false} unmountOnExit {...props}>
         <Content>{children}</Content>
-      </Root>,
-    )
+      </Root>
+    );
   }
 
   root.render(
@@ -121,19 +121,19 @@ function open({ children, onOpenChange, ...props }: DialogRootProps): {
       open={true}
       onOpenChange={function (details) {
         if (onOpenChange) {
-          onOpenChange(details)
+          onOpenChange(details);
         }
-        close()
+        close();
       }}
       {...props}
     >
       <Content>{children}</Content>
-    </Root>,
-  )
+    </Root>
+  );
 
   return {
     close,
-  }
+  };
 }
 
 async function confirm({
@@ -142,15 +142,15 @@ async function confirm({
   cancelProps,
   ...props
 }: DialogRootProps & {
-  question?: React.ReactNode
-  confirmProps?: React.ComponentPropsWithoutRef<typeof Button>
-  cancelProps?: React.ComponentPropsWithoutRef<typeof Button>
+  question?: React.ReactNode;
+  confirmProps?: React.ComponentPropsWithoutRef<typeof Button>;
+  cancelProps?: React.ComponentPropsWithoutRef<typeof Button>;
 }) {
   return new Promise(function (resolve) {
     open({
       onOpenChange({ open }) {
         if (!open) {
-          resolve(false)
+          resolve(false);
         }
       },
       children: (
@@ -166,12 +166,12 @@ async function confirm({
                     if (
                       cancelProps?.onClick?.constructor.name === "AsyncFunction"
                     ) {
-                      await cancelProps?.onClick(e)
+                      await cancelProps?.onClick(e);
                     } else if (cancelProps?.onClick) {
-                      cancelProps?.onClick(e)
+                      cancelProps?.onClick(e);
                     }
-                    setOpen(false)
-                    resolve(false)
+                    setOpen(false);
+                    resolve(false);
                   }}
                 >
                   {cancelProps?.children || "Cancel"}
@@ -185,12 +185,12 @@ async function confirm({
                       confirmProps?.onClick?.constructor.name ===
                       "AsyncFunction"
                     ) {
-                      await confirmProps?.onClick(e)
+                      await confirmProps?.onClick(e);
                     } else if (confirmProps?.onClick) {
-                      confirmProps?.onClick(e)
+                      confirmProps?.onClick(e);
                     }
-                    resolve(true)
-                    setOpen(false)
+                    resolve(true);
+                    setOpen(false);
                   }}
                 >
                   {confirmProps?.children || "Confirm"}
@@ -201,8 +201,8 @@ async function confirm({
         </Context>
       ),
       ...props,
-    })
-  })
+    });
+  });
 }
 
 export interface DialogProps
@@ -210,7 +210,7 @@ export interface DialogProps
     ComposedTVProps<typeof dialog> {}
 
 export interface Dialog extends ComponentMetadata {
-  (props: DialogProps): React.ReactElement | null
+  (props: DialogProps): React.ReactElement | null;
 }
 
 export const Dialog = createComponentTree(Root, {
@@ -226,6 +226,6 @@ export const Dialog = createComponentTree(Root, {
   CloseTrigger: CustomCloseTrigger,
   open,
   confirm,
-})
+});
 
-Dialog.displayName = "Dialog"
+Dialog.displayName = "Dialog";

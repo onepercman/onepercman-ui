@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { Fieldset as BaseFieldset } from "@ark-ui/react"
+import { Fieldset as BaseFieldset } from "@ark-ui/react";
 import {
   ComponentMetadata,
   ComposedTVProps,
   createComponentFactory,
   createComponentTree,
-} from "react-tvcx"
-import { tv } from "tailwind-variants"
+} from "react-tvcx";
+import { tv } from "tailwind-variants";
 
 export const fieldset = tv({
   base: "flex flex-col gap-2",
   slots: {
     label: "font-medium",
     errorText: "text-xs text-error",
-    helperText: "",
+    helperText: "text-xs text-muted-foreground",
   },
   variants: {
     size: {
@@ -37,21 +37,21 @@ export const fieldset = tv({
   defaultVariants: {
     size: "md",
   },
-})
+});
 
-const { withRoot, withSlot } = createComponentFactory(fieldset)
+const { withRoot, withSlot } = createComponentFactory(fieldset);
 
-const Root = withRoot(BaseFieldset.Root)
-const RootProvider = withRoot(BaseFieldset.RootProvider)
-const Context = withSlot(BaseFieldset.Context)
-const ErrorText = withSlot(BaseFieldset.ErrorText)
-const HelperText = withSlot(BaseFieldset.HelperText)
-const Legend = withSlot(BaseFieldset.Legend)
+const Root = withRoot(BaseFieldset.Root);
+const RootProvider = withRoot(BaseFieldset.RootProvider);
+const Context = withSlot(BaseFieldset.Context);
+const ErrorText = withSlot(BaseFieldset.ErrorText);
+const HelperText = withSlot(BaseFieldset.HelperText);
+const Legend = withSlot(BaseFieldset.Legend);
 
 export interface FieldsetProps extends ComposedTVProps<typeof fieldset> {}
 
 export interface Fieldset extends ComponentMetadata {
-  (props: FieldsetProps): React.ReactElement | null
+  (props: FieldsetProps): React.ReactElement | null;
 }
 
 export const Fieldset = createComponentTree(Root, {
@@ -61,8 +61,8 @@ export const Fieldset = createComponentTree(Root, {
   ErrorText,
   HelperText,
   Legend,
-})
+});
 
-Fieldset.displayName = "Fieldset"
+Fieldset.displayName = "Fieldset";
 
-export default Fieldset
+export default Fieldset;

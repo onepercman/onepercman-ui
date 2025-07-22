@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { styled } from "react-tvcx"
-import { tv } from "tailwind-variants"
+import { styled } from "react-tvcx";
+import { tv } from "tailwind-variants";
 
 export const badge = tv({
   base: [
-    "inline-flex items-center gap-1 rounded-full bg-opacity-10 text-center font-medium",
+    "inline-flex items-center gap-1 rounded-full text-center font-medium",
     "min-h-[var(--badge-size)] min-w-[var(--badge-size)]",
   ],
   variants: {
@@ -16,21 +16,23 @@ export const badge = tv({
       lg: "px-4 py-2 [--badge-size:2.75rem]",
     },
     color: {
-      default: "bg-default text-foreground",
-      primary: "bg-primary text-primary",
-      success: "bg-success text-success",
-      error: "bg-error text-error",
-      warning: "bg-warning text-warning",
+      default: "bg-component text-foreground",
+      primary: "bg-primary-muted text-primary",
+      success: "bg-success-muted text-success",
+      error: "bg-error-muted text-error",
+      warning: "bg-warning-muted text-warning",
+      info: "bg-info-muted text-info",
+      accent: "bg-accent-muted text-accent",
     },
   },
   defaultVariants: {
     size: "sm",
     color: "default",
   },
-})
+});
 
-export const Badge = styled("span", badge)
+export const Badge = styled("span", badge);
 
-Badge.displayName = "Badge"
+Badge.displayName = "Badge";
 
-export default Badge
+export default Badge;
